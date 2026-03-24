@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market & Model — Dilly Investors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAFAFA;--white:#FFF;--g50:#F8F9FA;--g100:#F1F3F5;--g200:#E9ECEF;--g300:#DEE2E6;--g500:#ADB5BD;--g600:#868E96;--g700:#495057;--g800:#343A40;--g900:#212529;--blue:#2563EB;--blue-light:#EFF6FF;--green:#059669;--green-light:#ECFDF5;--amber:#D97706;--amber-light:#FFFBEB;--coral:#DC2626;--gold:#C9A84C}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--g800);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--g200);padding:14px 0}
+.ni{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--g900);text-decoration:none}.logo span{color:var(--gold)}
+.nl{display:flex;gap:28px;align-items:center}.nl a{color:var(--g600);text-decoration:none;font-size:13px;font-weight:500}.nl a:hover{color:var(--g900)}.nl a.act{color:var(--blue)}
+.nc{background:var(--g900);color:#fff;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none}
+.mm{display:none;background:0;border:0;font-size:22px;cursor:pointer;color:var(--g700)}
+section{padding:80px 32px}.si{max-width:1100px;margin:0 auto}
+.sl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.st2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,3.5vw,36px);line-height:1.15;color:var(--g900);margin-bottom:12px}
+.ss{font-size:15px;color:var(--g600);max-width:520px;line-height:1.7}
+footer{border-top:1px solid var(--g200);padding:32px;text-align:center;font-size:12px;color:var(--g500)}
+footer a{color:var(--g500);text-decoration:none;margin:0 10px}
+.fu{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}.fu.v{opacity:1;transform:translateY(0)}
+.ph{padding:140px 32px 60px;text-align:center}
+.ph h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(32px,5vw,48px);color:var(--g900);margin-bottom:12px}
+.ph p{font-size:17px;color:var(--g600);max-width:560px;margin:0 auto}
+.btn{padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-dark{background:var(--g900);color:#fff}.btn-dark:hover{background:var(--g700)}
+
+/* TAM cards */
+.tam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.tam-card{background:var(--white);border:1px solid var(--g200);border-radius:16px;padding:28px 24px;text-align:center}
+.tam-card .label{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--g500);margin-bottom:4px}
+.tam-card .num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--g900);margin-bottom:6px}
+.tam-card p{font-size:12px;color:var(--g600);line-height:1.6}
+
+/* Why pay */
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+.pay-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:24px 22px;display:flex;gap:16px;align-items:flex-start}
+.pay-icon{font-size:24px;flex-shrink:0}
+.pay-card h4{font-size:14px;font-weight:700;color:var(--g900);margin-bottom:4px}
+.pay-card p{font-size:13px;color:var(--g600);line-height:1.6}
+
+/* Pricing cards */
+.price-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px;margin:32px auto 0}
+.pc{background:var(--white);border:1px solid var(--g200);border-radius:16px;padding:32px 28px;position:relative}
+.pc.pro{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+.pc.pro::before{content:'RECOMMENDED';position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;padding:3px 12px;border-radius:6px;font-size:9px;font-weight:700;letter-spacing:1px}
+.pc-tier{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--g500);margin-bottom:4px}
+.pc-price{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--g900)}
+.pc-price span{font-size:14px;color:var(--g500);font-weight:400}
+.pc-price .og{text-decoration:line-through;font-size:18px;color:var(--g400);margin-left:6px}
+.pc-note{font-size:11px;color:var(--amber);font-weight:600;margin-top:2px}
+.pc ul{list-style:none;margin:16px 0 0}
+.pc li{font-size:13px;color:var(--g600);padding:5px 0;display:flex;align-items:center;gap:8px}
+.pc li::before{content:'✓';color:var(--green);font-weight:700;font-size:12px}
+
+/* Unit economics */
+.ue-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.ue-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:24px 20px;text-align:center}
+.ue-card .num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--blue);margin-bottom:4px}
+.ue-card .label{font-size:11px;color:var(--g500);font-weight:600}
+.ue-card p{font-size:11px;color:var(--g600);margin-top:4px}
+
+/* Expansion */
+.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+.exp-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:20px 22px}
+.exp-card h4{font-size:14px;font-weight:700;color:var(--g900);margin-bottom:4px}
+.exp-card p{font-size:13px;color:var(--g600);line-height:1.6}
+
+@media(max-width:900px){.tam-grid{grid-template-columns:1fr}.pay-grid,.exp-grid{grid-template-columns:1fr}.ue-grid{grid-template-columns:repeat(2,1fr)}.price-row{grid-template-columns:1fr;max-width:360px}.nl{display:none}.mm{display:block}}
+</style>
+</head>
+<body>
+
+<nav><div class="ni">
+  <a href="index.html" class="logo"><span>dilly</span> investors</a>
+  <div class="nl">
+    <a href="index.html">Overview</a><a href="product.html">Product</a><a href="market.html" class="act">Market & Model</a><a href="team.html">Team & Vision</a>
+    <a class="nc" href="mailto:dilan@hellodilly.com">Get in Touch</a>
+  </div>
+  <button class="mm" onclick="let n=document.querySelector('.nl');n.style.display=n.style.display==='flex'?'none':'flex'">☰</button>
+</div></nav>
+
+<div class="ph">
+  <h1>Market & business model</h1>
+  <p>20 million undergraduates. Career services budgets are flat. The market is ready for a new category.</p>
+</div>
+
+<!-- TAM -->
+<section style="background:var(--white)"><div class="si">
+  <div class="sl">Market Size</div>
+  <div class="st2">The career tools market is wide open.</div>
+  <div class="tam-grid">
+    <div class="tam-card fu"><div class="label">TAM</div><div class="num">$12B+</div><p>US career services, resume tools, job boards, career coaching for students and early career.</p></div>
+    <div class="tam-card fu"><div class="label">SAM</div><div class="num">$2.4B</div><p>12M students who actively use career tools × $200/yr average spend across tools, coaching, prep.</p></div>
+    <div class="tam-card fu"><div class="label">SOM</div><div class="num">$120M</div><p>1-2M students at target universities × $60-120/yr. Starting where career centers are weakest.</p></div>
+  </div>
+</div></section>
+
+<!-- Why students pay -->
+<section><div class="si">
+  <div class="sl">Why Students Pay</div>
+  <div class="st2">Career anxiety is at an all-time high.</div>
+  <div class="pay-grid">
+    <div class="pay-card fu"><div class="pay-icon">💰</div><div><h4>ROI is immediate</h4><p>An internship at a top firm pays $25-40/hour. Dilly costs less than one hour of internship pay per month. If it helps land one offer, it's the best investment a student makes.</p></div></div>
+    <div class="pay-card fu"><div class="pay-icon">📚</div><div><h4>Cheaper than Chegg</h4><p>Students pay $16/month for Chegg to get homework answers. Dilly is $5/month to get hired. The value proposition is more compelling and more defensible.</p></div></div>
+    <div class="pay-card fu"><div class="pay-icon">🎓</div><div><h4>Career coaching replacement</h4><p>Professional career coaching costs $100-300/hour. Dilly provides unlimited, personalized, 24/7 coaching for $5/month. 60x cheaper with full context awareness.</p></div></div>
+    <div class="pay-card fu"><div class="pay-icon">🤖</div><div><h4>ChatGPT isn't enough</h4><p>The free alternative is generic. ChatGPT doesn't know the student's resume, scores, track, or target companies. Dilly is specific, tracked, and personal.</p></div></div>
+  </div>
+</div></section>
+
+<!-- Pricing model -->
+<section style="background:var(--white)"><div class="si" style="text-align:center">
+  <div class="sl">Pricing</div>
+  <div class="st2">Free to see the problem. Paid to fix it.</div>
+  <div class="price-row">
+    <div class="pc fu">
+      <div class="pc-tier">FREE</div>
+      <div class="pc-price">$0</div>
+      <ul><li>1 resume audit with full score</li><li>Browse all internships</li><li>3 AI messages per day</li><li>Readiness badges</li></ul>
+    </div>
+    <div class="pc pro fu">
+      <div class="pc-tier">DILLY PRO</div>
+      <div class="pc-price">$4.99<span>/mo</span> <span class="og">$9.99</span></div>
+      <div class="pc-note">Founding member price — locked in</div>
+      <ul><li>Unlimited audits & AI coaching</li><li>ATS scanning (6 systems)</li><li>Gap analysis per job</li><li>Resume Editor with scoring</li><li>Application Tracker & Calendar</li><li>Leaderboard ranking</li><li>Score history & trends</li></ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- Unit economics -->
+<section><div class="si">
+  <div class="sl">Unit Economics</div>
+  <div class="st2">High margins, low CAC.</div>
+  <div class="ue-grid">
+    <div class="ue-card fu"><div class="num">&lt;$15</div><div class="label">CAC</div><p>Organic: campus ambassadors, referrals, word-of-mouth</p></div>
+    <div class="ue-card fu"><div class="num">$60–120</div><div class="label">LTV</div><p>6-12 month retention with daily engagement loops</p></div>
+    <div class="ue-card fu"><div class="num">4:1–8:1</div><div class="label">LTV:CAC</div><p>Strong unit economics from day one</p></div>
+    <div class="ue-card fu"><div class="num">85%+</div><div class="label">Gross Margin</div><p>LLM costs ~$0.02-0.05/audit; commodity compute</p></div>
+  </div>
+</div></section>
+
+<!-- Expansion revenue -->
+<section style="background:var(--white)"><div class="si">
+  <div class="sl">Expansion Revenue</div>
+  <div class="st2">Student subscriptions are just the start.</div>
+  <div class="exp-grid">
+    <div class="exp-card fu"><h4>University Licensing</h4><p>Career centers license Dilly for all students. Flat annual fee. Replaces or supplements existing tools. Batch audit API already built.</p></div>
+    <div class="exp-card fu"><h4>Recruiter API</h4><p>Companies search scored, verified student profiles. Pay-per-search or subscription. Built and functional. Launch after student base established.</p></div>
+    <div class="exp-card fu"><h4>Premium Tiers</h4><p>Deep-dive reports, advanced mock interviews, 1:1 coaching marketplace. Coaches use Dilly's tools and data to deliver better sessions.</p></div>
+    <div class="exp-card fu"><h4>Campus Partnerships</h4><p>Revenue sharing with university career centers. Dilly becomes the tech layer; career center provides the human layer.</p></div>
+  </div>
+</div></section>
+
+<section style="text-align:center;padding-top:40px">
+  <a href="team.html" class="btn btn-dark">Team & Vision →</a>
+</section>
+
+<footer>
+  <a href="index.html">Overview</a><a href="product.html">Product</a><a href="market.html">Market</a><a href="team.html">Team</a>
+  <p style="margin-top:10px">© 2026 Dilly · hellodilly.com</p>
+</footer>
+
+<script>
+const ob=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1});
+document.querySelectorAll('.fu').forEach(el=>ob.observe(el));
+</script>
+</body>
+</html>
