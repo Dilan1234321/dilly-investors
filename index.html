@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dilly — Investor Overview</title>
-<meta name="description" content="Dilly scores resumes like hiring managers. AI career coaching, ATS scanning, internship matching. Built. Running. Launching April 2026.">
+<title>Dilly · Investor Overview</title>
+<meta name="description" content="dilly: the operating system for student careers in the age of AI. We measure talent, teach skills, and match students to opportunity. Pre-seed. Launching April 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
@@ -20,7 +20,7 @@ body{background:var(--bg);color:var(--g800);font-family:'Inter',sans-serif;line-
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--g200);padding:14px 0;transition:padding .3s}
 .ni{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--g900);text-decoration:none;letter-spacing:-0.5px}
+.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--g900);text-decoration:none;letter-spacing:-0.5px;display:inline-flex;align-items:center;gap:6px}
 .logo span{color:var(--gold)}
 .nl{display:flex;gap:28px;align-items:center}
 .nl a{color:var(--g600);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}.nl a:hover{color:var(--g900)}
@@ -44,6 +44,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:48px;padding-top:32px;border-top:1px solid var(--g200)}
 .hero-stats .st .n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--g900)}
 .hero-stats .st .l{font-size:12px;color:var(--g500);margin-top:2px}
+.hero-kicker{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.02em;margin-bottom:10px}
+.hero-kicker em{font-style:normal;color:var(--g600);font-weight:500}
+.snapshot{background:var(--white);border:1px solid var(--g200);border-radius:16px;padding:28px 24px;margin-top:40px;max-width:640px;margin-left:auto;margin-right:auto;text-align:left}
+.snapshot .snap-h{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--g500);margin-bottom:12px}
+.snap-rows{display:grid;gap:10px;font-size:13px;color:var(--g600)}
+.snap-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--g100)}
+.snap-row:last-child{border-bottom:0}
+.snap-row strong{color:var(--g800);font-weight:600}
+.problem-bullets{margin-top:28px;max-width:640px}
+.problem-bullets ul{margin:0;padding-left:20px;color:var(--g600);font-size:14px;line-height:1.75}
+.problem-bullets li{margin:8px 0}
+.why-band{background:var(--g50);border:1px solid var(--g200);border-radius:16px;padding:32px 28px;margin-top:40px}
+.why-band p{font-size:14px;color:var(--g600);line-height:1.75;margin-bottom:12px}
+.why-band p:last-child{margin-bottom:0}
+.why-band strong{color:var(--g800)}
 
 /* SECTION */
 section{padding:80px 32px}.si{max-width:1100px;margin:0 auto}
@@ -115,7 +130,7 @@ footer a{color:var(--g500);text-decoration:none;margin:0 10px}footer a:hover{col
 <body>
 
 <nav><div class="ni">
-  <a href="index.html" class="logo"><span>dilly</span> investors</a>
+  <a href="index.html" class="logo"><img src="dilly_logo-removebg-preview (1).png" alt="dilly" style="height:22px;margin-top:4px"> investors</a>
   <div class="nl">
     <a href="index.html" class="act">Overview</a>
     <a href="product.html">Product</a>
@@ -128,16 +143,29 @@ footer a{color:var(--g500);text-decoration:none;margin:0 10px}footer a:hover{col
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-label"><span class="dot"></span> Pre-Seed · Launching April 2026</div>
-  <h1>The career center<br>in your <em>pocket.</em></h1>
-  <p class="hero-sub">Dilly scores resumes the way senior hiring managers read them — across Smart, Grit, and Build — then coaches students to close the gap. AI-powered. Mobile-first. Built and running.</p>
+  <div class="hero-label"><span class="dot"></span> Pre-Seed · Raising $1.2M · Launching April 2026</div>
+  <p class="hero-kicker">✦ <em>the operating system for student careers in the age of AI</em></p>
+  <h1>We measure talent,<br>teach skills,<br>and match students<br>to <em>opportunity.</em></h1>
+  <p class="hero-sub">11 products. One platform. Scoring, coaching, learning, job matching, and hiring, from high school to college to career. .edu-verified. Mobile-first. Zero data sold. Built and running.</p>
   <div class="hero-cta">
-    <a href="product.html" class="btn btn-dark">See the Product →</a>
+    <a href="product.html" class="btn btn-dark">See core products →</a>
+    <a href="market.html" class="btn btn-outline">See the market →</a>
     <a href="mailto:dilan@hellodilly.com" class="btn btn-outline">Contact Founder</a>
+  </div>
+  <div class="snapshot fu">
+    <div class="snap-h">Live product preview · dilly Student snapshot</div>
+    <div class="snap-rows">
+      <div class="snap-row"><span>verified .edu</span><strong>Only enrolled students · eliminates bot spam</strong></div>
+      <div class="snap-row"><span>dilly score · 22 career fields</span><strong>Smart · Grit · Build · Job Readiness</strong></div>
+      <div class="snap-row"><span>best next move</span><strong>AI Academy + targeted rewrites · 3x callback increase</strong></div>
+      <div class="snap-row"><span>matched opportunities</span><strong>Internships &amp; entry-level ranked by fit · Ready / Almost / Gap</strong></div>
+      <div class="snap-row"><span>dilly AI coaching</span><strong>Thread-based · knows resume, scores, apps &amp; deadlines</strong></div>
+    </div>
   </div>
   <div class="hero-stats">
     <div class="st"><div class="n">20M</div><div class="l">US undergraduates</div></div>
-    <div class="st"><div class="n">$120M+</div><div class="l">Addressable market</div></div>
+    <div class="st"><div class="n">$120M+</div><div class="l">Year 1 addressable market</div></div>
+    <div class="st"><div class="n">11</div><div class="l">Products in the platform</div></div>
     <div class="st"><div class="n">6</div><div class="l">ATS systems scanned</div></div>
     <div class="st"><div class="n">1</div><div class="l">Founder built it all</div></div>
   </div>
@@ -146,35 +174,35 @@ footer a{color:var(--g500);text-decoration:none;margin:0 10px}footer a:hover{col
 <!-- PROBLEM -->
 <section style="background:var(--white)"><div class="si">
   <div class="sl">The Problem</div>
-  <div class="st2">Students are flying blind.</div>
-  <div class="ss">Career centers can't scale. Recruiters pattern-match in 6 seconds. 75% of resumes are filtered by robots. Students have zero signal on where they stand.</div>
+  <div class="st2">AI is breaking the old path from school to work.</div>
+  <div class="ss">Career centers can't scale. Recruiters pattern-match in 6 seconds. 75% of resumes are filtered by robots. Six in ten applications are junk. Students have zero signal on where they stand. Parents can't help either.</div>
   <div class="prob-grid">
-    <div class="prob-card fu"><div class="num red">6 sec</div><p>Time recruiters spend per resume. They're not reading — they're pattern-matching.</p></div>
-    <div class="prob-card fu"><div class="num amber">1:500</div><p>Career advisor to student ratio. Office hours fill up. Advice is generic.</p></div>
-    <div class="prob-card fu"><div class="num red">75%</div><p>Of resumes rejected by ATS before a human sees them.</p></div>
-    <div class="prob-card fu"><div class="num blue">$0</div><p>Spent by students on career tools. Nothing good exists at their price.</p></div>
+    <div class="prob-card fu"><div class="num red">6 sec</div><p>Time recruiters spend per resume. They're not reading. They're pattern-matching.</p></div>
+    <div class="prob-card fu"><div class="num amber">1:2,263</div><p>One advisor for every 2,263 students. Office hours fill up. Advice is generic. Personalization is impossible.</p></div>
+    <div class="prob-card fu"><div class="num red">75%</div><p>Of resumes rejected by ATS before a human sees them. Students never know why.</p></div>
+    <div class="prob-card fu"><div class="num blue">50%</div><p>Of entry-level roles at risk from AI disruption. The old path from school to work is broken.</p></div>
   </div>
 </div></section>
 
 <!-- INSIGHT -->
 <section><div class="si">
   <div class="sl">The Insight</div>
-  <div class="st2">Recruiters evaluate three things.<br>No career tool scores them.</div>
+  <div class="st2">Recruiters evaluate four things.<br>No career tool scores them.</div>
   <div class="dim-grid">
     <div class="dim-card smart fu">
       <div class="dim-label">Smart</div>
       <div class="dim-score">68</div>
-      <div class="dim-desc">Academic rigor — GPA, coursework difficulty, research, certifications. A 3.5 in Organic Chemistry means more than a 4.0 in General Studies.</div>
+      <div class="dim-desc">Domain expertise & knowledge: GPA, coursework difficulty, research, certifications. A 3.5 in Organic Chemistry means more than a 4.0 in General Studies.</div>
     </div>
     <div class="dim-card grit fu">
       <div class="dim-label">Grit</div>
       <div class="dim-score">100</div>
-      <div class="dim-desc">Leadership & impact — Did you lead something? Own outcomes? Quantify results? This separates who gets interviews from who doesn't.</div>
+      <div class="dim-desc">Persistence & resilience. Did you lead something? Own outcomes? Quantify results? This separates who gets interviews from who doesn't.</div>
     </div>
     <div class="dim-card build fu">
       <div class="dim-label">Build</div>
       <div class="dim-score">72</div>
-      <div class="dim-desc">Proof — Deployed projects, internships, clinical hours. Track-specific: pre-med needs shadowing; tech needs shipped code.</div>
+      <div class="dim-desc">Project & portfolio strength. Deployed projects, internships, clinical hours. Track-specific across 22 career fields: pre-med needs shadowing; tech needs shipped code.</div>
     </div>
   </div>
 </div></section>
@@ -199,14 +227,16 @@ footer a{color:var(--g500);text-decoration:none;margin:0 10px}footer a:hover{col
   <div class="sl">Competitive Landscape</div>
   <div class="st2">The only tool that closes the full loop.</div>
   <table class="ct">
-    <tr><th></th><th class="dc">Dilly</th><th>Handshake</th><th>Jobscan</th><th>VMock</th><th>ChatGPT</th></tr>
-    <tr><td>3-dimension scoring</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
-    <tr><td>ATS scanning (6 systems)</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
-    <tr><td>Real internship matching</td><td class="dc"><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
-    <tr><td>AI coaching with context</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td>~</td></tr>
-    <tr><td>Live bullet scoring</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td></tr>
-    <tr><td>Mobile-first</td><td class="dc"><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td></tr>
-    <tr><td style="font-weight:700;color:var(--g900)">Price</td><td class="dc" style="font-weight:700">$4.99/mo</td><td>Free</td><td>$49/mo</td><td>$119/yr</td><td>$20/mo</td></tr>
+    <tr><th></th><th class="dc">Dilly</th><th>Jobscan</th><th>VMock</th><th>ChatGPT</th></tr>
+    <tr><td>4-dimension scoring</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+    <tr><td>ATS scanning (6 systems)</td><td class="dc"><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+    <tr><td>Real internship matching</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+    <tr><td>AI coaching with context</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td>~</td></tr>
+    <tr><td>Live bullet scoring</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td></tr>
+    <tr><td>Mobile-first</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td></tr>
+    <tr><td>Custom job analysis</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+    <tr><td>.edu verified students</td><td class="dc"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+    <tr><td style="font-weight:700;color:var(--g900)">Price</td><td class="dc" style="font-weight:700">$9.99/mo</td><td>$49/mo</td><td>$119/yr</td><td>$20/mo</td></tr>
   </table>
 </div></section>
 
@@ -215,10 +245,10 @@ footer a{color:var(--g500);text-decoration:none;margin:0 10px}footer a:hover{col
   <div class="sl">The Market</div>
   <div class="st2">20 million undergrads. Zero good tools.</div>
   <div class="mkt-grid">
-    <div class="mkt-card fu"><div class="num">$120M+</div><p>Addressable market — 1-2M students willing to pay $60-120/year for career tools.</p></div>
-    <div class="mkt-card fu"><div class="num">$16/mo</div><p>Students pay for Chegg to cheat. Dilly is $5/mo to get hired.</p></div>
-    <div class="mkt-card fu"><div class="num">85%+</div><p>Target gross margin. LLM costs ~$0.02-0.05 per audit.</p></div>
-    <div class="mkt-card fu"><div class="num">4:1 – 8:1</div><p>Target LTV:CAC ratio. Organic growth via ambassadors and referrals.</p></div>
+    <div class="mkt-card fu"><div class="num">$120M+</div><p>Addressable market. 1-2M students willing to pay $60-120/year for career tools. Dual market: US drives revenue per user, India drives scale.</p></div>
+    <div class="mkt-card fu"><div class="num">$1M → $100M+</div><p>Revenue trajectory. Year 1: $1M proof. Year 2: $5M expansion. Year 3: $20M platform. Year 5: $100M+ global.</p></div>
+    <div class="mkt-card fu"><div class="num">85%+</div><p>Target gross margin. LLM costs ~$0.02-0.05 per audit. Commodity compute, premium pricing.</p></div>
+    <div class="mkt-card fu"><div class="num">4:1 – 8:1</div><p>Target LTV:CAC ratio. Organic growth via ambassadors, referrals, and campus partnerships.</p></div>
   </div>
   <a href="market.html" class="btn btn-outline" style="margin-top:24px">Full Market Analysis →</a>
 </div></section>
@@ -226,7 +256,7 @@ footer a{color:var(--g500);text-decoration:none;margin:0 10px}footer a:hover{col
 <!-- CTA -->
 <section class="cta-band">
   <h2>Built by one founder.<br>Ready to scale.</h2>
-  <p>Launching April 2026 at the University of Tampa. Preparing to raise pre-seed.</p>
+  <p>Launching April 2026 at the University of Tampa. Raising $1.2M pre-seed. 18 months to 10K+ users and 25+ university partnerships.</p>
   <a href="mailto:dilan@hellodilly.com" class="btn btn-dark">Get in Touch →</a>
 </section>
 
