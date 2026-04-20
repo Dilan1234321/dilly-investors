@@ -3,196 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Market & Model · Dilly Investors</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#FAFAFA;--white:#FFF;--g50:#F8F9FA;--g100:#F1F3F5;--g200:#E9ECEF;--g300:#DEE2E6;--g500:#ADB5BD;--g600:#868E96;--g700:#495057;--g800:#343A40;--g900:#212529;--blue:#2563EB;--blue-light:#EFF6FF;--green:#059669;--green-light:#ECFDF5;--amber:#D97706;--amber-light:#FFFBEB;--coral:#DC2626;--gold:#C9A84C}
-html{scroll-behavior:smooth}body{background:var(--bg);color:var(--g800);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--g200);padding:14px 0}
-.ni{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--g900);text-decoration:none;display:inline-flex;align-items:center;gap:6px}.logo span{color:var(--gold)}
-.nl{display:flex;gap:28px;align-items:center}.nl a{color:var(--g600);text-decoration:none;font-size:13px;font-weight:500}.nl a:hover{color:var(--g900)}.nl a.act{color:var(--blue)}
-.nc{background:var(--g900);color:#fff;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none}
-.mm{display:none;background:0;border:0;font-size:22px;cursor:pointer;color:var(--g700)}
-section{padding:80px 32px}.si{max-width:1100px;margin:0 auto}
-.sl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
-.st2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,3.5vw,36px);line-height:1.15;color:var(--g900);margin-bottom:12px}
-.ss{font-size:15px;color:var(--g600);max-width:520px;line-height:1.7}
-footer{border-top:1px solid var(--g200);padding:32px;text-align:center;font-size:12px;color:var(--g500)}
-footer a{color:var(--g500);text-decoration:none;margin:0 10px}
-.fu{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}.fu.v{opacity:1;transform:translateY(0)}
-.ph{padding:140px 32px 60px;text-align:center}
-.ph h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(32px,5vw,48px);color:var(--g900);margin-bottom:12px}
-.ph p{font-size:17px;color:var(--g600);max-width:560px;margin:0 auto}
-.btn{padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-dark{background:var(--g900);color:#fff}.btn-dark:hover{background:var(--g700)}
-
-/* TAM cards */
-.tam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
-.tam-card{background:var(--white);border:1px solid var(--g200);border-radius:16px;padding:28px 24px;text-align:center}
-.tam-card .label{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--g500);margin-bottom:4px}
-.tam-card .num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--g900);margin-bottom:6px}
-.tam-card p{font-size:12px;color:var(--g600);line-height:1.6}
-
-/* Why pay */
-.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
-.pay-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:24px 22px;display:flex;gap:16px;align-items:flex-start}
-.pay-icon{font-size:24px;flex-shrink:0}
-.pay-card h4{font-size:14px;font-weight:700;color:var(--g900);margin-bottom:4px}
-.pay-card p{font-size:13px;color:var(--g600);line-height:1.6}
-
-/* Pricing cards */
-.price-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px;margin:32px auto 0}
-.pc{background:var(--white);border:1px solid var(--g200);border-radius:16px;padding:32px 28px;position:relative}
-.pc-tier{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--g500);margin-bottom:4px}
-.pc-price{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--g900)}
-.pc-price span{font-size:14px;color:var(--g500);font-weight:400}
-.pc-price .og{text-decoration:line-through;font-size:18px;color:var(--g400);margin-left:6px}
-.pc-note{font-size:11px;color:var(--amber);font-weight:600;margin-top:2px}
-.pc ul{list-style:none;margin:16px 0 0}
-.pc li{font-size:13px;color:var(--g600);padding:5px 0;display:flex;align-items:center;gap:8px}
-.pc li::before{content:'✓';color:var(--green);font-weight:700;font-size:12px}
-
-/* Unit economics */
-.ue-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
-.ue-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:24px 20px;text-align:center}
-.ue-card .num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--blue);margin-bottom:4px}
-.ue-card .label{font-size:11px;color:var(--g500);font-weight:600}
-.ue-card p{font-size:11px;color:var(--g600);margin-top:4px}
-
-/* Expansion */
-.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
-.exp-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:20px 22px}
-.exp-card h4{font-size:14px;font-weight:700;color:var(--g900);margin-bottom:4px}
-.exp-card p{font-size:13px;color:var(--g600);line-height:1.6}
-
-@media(max-width:900px){.tam-grid{grid-template-columns:1fr}.pay-grid,.exp-grid{grid-template-columns:1fr}.ue-grid{grid-template-columns:repeat(2,1fr)}.price-row{grid-template-columns:1fr;max-width:360px}.nl{display:none}.mm{display:block}}
-</style>
+<title>Market · Dilly Investor Overview</title>
+<meta name="description" content="The shift, the math, the business model, and the moats behind Dilly.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav><div class="ni">
-  <a href="index.html" class="logo"><img src="dilly_logo-removebg-preview (1).png" alt="dilly" style="height:22px;margin-top:4px"> investors</a>
-  <div class="nl">
-    <a href="index.html">Overview</a><a href="product.html">Product</a><a href="market.html" class="act">Market & Model</a><a href="team.html">Team & Vision</a>
-    <a class="nc" href="mailto:dilan@hellodilly.com">Get in Touch</a>
-  </div>
-  <button class="mm" onclick="let n=document.querySelector('.nl');n.style.display=n.style.display==='flex'?'none':'flex'">☰</button>
-</div></nav>
-
-<div class="ph">
-  <h1>Market & business model</h1>
-  <p>20 million US undergraduates. Hundreds of millions globally. Career services budgets are flat. 50% of entry-level roles face AI disruption. The market is ready for a new category.</p>
-</div>
-
-<!-- TAM -->
-<section style="background:var(--white)"><div class="si">
-  <div class="sl">Market Size</div>
-  <div class="st2">The career tools market is wide open.</div>
-  <div class="tam-grid">
-    <div class="tam-card fu"><div class="label">TAM</div><div class="num">$12B+</div><p>US career services, resume tools, job boards, career coaching for students and early career. Dual market: US drives revenue per user, India drives scale and distribution.</p></div>
-    <div class="tam-card fu"><div class="label">SAM</div><div class="num">$2.4B</div><p>12M students who actively use career tools × $200/yr average spend across tools, coaching, prep.</p></div>
-    <div class="tam-card fu"><div class="label">SOM</div><div class="num">$120M</div><p>1-2M students at target universities × $60-120/yr. Starting where career centers are weakest. 1 advisor for every 2,263 students.</p></div>
-  </div>
-</div></section>
-
-<!-- Why students pay -->
-<section><div class="si">
-  <div class="sl">Why Students Pay</div>
-  <div class="st2">Career anxiety is at an all-time high.</div>
-  <div class="pay-grid">
-    <div class="pay-card fu"><div class="pay-icon">💰</div><div><h4>ROI is immediate: 3x callbacks</h4><p>Top internships pay $25-40/hr. Dilly costs less than one hour per month. 3x callback increase after targeted edits. One offer pays for a lifetime of subscriptions.</p></div></div>
-    <div class="pay-card fu"><div class="pay-icon">📚</div><div><h4>Cheaper than Chegg</h4><p>Students pay $16/month for Chegg to get homework answers. Dilly is $9.99/month to get hired. The value proposition is more compelling and more defensible.</p></div></div>
-    <div class="pay-card fu"><div class="pay-icon">🎓</div><div><h4>Career coaching replacement</h4><p>Professional career coaching costs $100-300/hour. Dilly provides unlimited, personalized, 24/7 coaching for $9.99/month. 60x cheaper with full context awareness across 22 career fields.</p></div></div>
-    <div class="pay-card fu"><div class="pay-icon">🤖</div><div><h4>ChatGPT isn't enough</h4><p>The free alternative is generic. ChatGPT doesn't know the student's resume, scores, track, or target companies. Dilly is specific, tracked, and personal. Thread-based coaching that remembers everything.</p></div></div>
-  </div>
-</div></section>
-
-<!-- Pricing model -->
-<section style="background:var(--white)"><div class="si" style="text-align:center">
-  <div class="sl">Pricing</div>
-  <div class="st2">Free to see the problem. Paid to fix it.</div>
-  <div class="price-row">
-    <div class="pc fu">
-      <div class="pc-tier">DILLY STARTER</div>
-      <div class="pc-price">$0</div>
-      <ul><li>Resume score vs. cohort comparison</li><li>Basic ATS formatting check</li><li>Full job listings across 22 fields</li><li>Internship tracker</li><li>.edu verification</li></ul>
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-mark serif">Dilly</span>
+      <span class="brand-tag">Investor Overview</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="market.html" class="active">Market</a>
+      <a href="team.html">Team</a>
     </div>
-    <div class="pc fu">
-      <div class="pc-tier">DILLY</div>
-      <div><span class="pc-price">$9.99<span>/mo</span> <span class="og">$19.99</span></span></div>
-      <div class="pc-note">50% student discount applied</div>
-      <ul><li>Everything in Starter, plus:</li><li>Job-tailored resume generation per posting</li><li>Line-by-line AI rewrites with quantified bullets</li><li>Live resume editor with real-time scoring</li><li>Full ATS scans: 6 systems (Greenhouse, Lever, Workday, iCIMS, Taleo, Ashby)</li><li>Dilly Score tracking (Smart, Grit, Build)</li><li>Cohort benchmarking across 22 fields</li><li>Per-listing readiness indicators with dimension bars</li><li>Personalized job matching & gap analysis</li><li>AI mock interviews & interview prep</li><li>Application pipeline CRM</li><li>Calendar with deadline reminders</li><li>Leaderboard with weekly updates</li><li>Score history & trend lines</li><li>Priority access to new features</li></ul>
+    <a href="mailto:dilan@hellodilly.com" class="nav-cta">Request Deck</a>
+  </div>
+</nav>
+
+<!-- Page hero -->
+<header class="page-hero">
+  <div class="wrap fade-up">
+    <div class="eyebrow">Market & Model</div>
+    <h1>Three modes. Three markets. <em>One wedge.</em></h1>
+    <p class="lead">The career stack was built for a labor market that no longer exists. AI broke the signals, the career center is unstaffed, and the resume is a filter instead of a signal. Dilly is the first platform designed for that reality — and the first that runs economically at a student price point.</p>
+  </div>
+</header>
+
+<!-- The Shift -->
+<section class="section">
+  <div class="wrap shift-grid">
+    <div class="fade-up">
+      <div class="eyebrow">The Shift</div>
+      <h2 class="h2">The career stack wasn't built for any of this.</h2>
+      <p class="lead">
+        Every surface between a person and their job was built for a world that no longer exists. AI broke the old signals. The people trying to navigate it no longer trust them. The ones getting replaced don't have time to figure it out alone.
+      </p>
+      <div class="rule-gold"></div>
+    </div>
+
+    <div class="shift-points fade-up">
+      <div class="shift-point">
+        <span class="shift-point-num">01</span>
+        <div class="shift-point-body">
+          <h3>Career support is a lottery.</h3>
+          <p>Students get one advisor per 2,263 of them. Mid-career professionals get zero. The only people with real career infrastructure are the already-advantaged.</p>
+        </div>
+      </div>
+      <div class="shift-point">
+        <span class="shift-point-num">02</span>
+        <div class="shift-point-body">
+          <h3>The resume is a filter, not a signal.</h3>
+          <p>75% of applications are rejected by an ATS before a human sees them. The survivors get a six-second skim. Nobody learns anything — not the applicant, not the employer.</p>
+        </div>
+      </div>
+      <div class="shift-point">
+        <span class="shift-point-num">03</span>
+        <div class="shift-point-body">
+          <h3>AI broke scoring — and now threatens the job.</h3>
+          <p>Every resume reads like a consultant wrote it. Every cover letter is GPT-polished. Meanwhile, 30–70% of roles in most cohorts face meaningful AI disruption in the next five years. The tools people relied on can't help with what's actually happening.</p>
+        </div>
+      </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<!-- Unit economics -->
-<section><div class="si">
-  <div class="sl">Unit Economics</div>
-  <div class="st2">High margins, low CAC.</div>
-  <div class="ue-grid">
-    <div class="ue-card fu"><div class="num">&lt;$15</div><div class="label">CAC</div><p>Organic: campus ambassadors, referrals, word-of-mouth</p></div>
-    <div class="ue-card fu"><div class="num">$60–120</div><div class="label">LTV</div><p>6-12 month retention with daily engagement loops</p></div>
-    <div class="ue-card fu"><div class="num">4:1–8:1</div><div class="label">LTV:CAC</div><p>Strong unit economics from day one</p></div>
-    <div class="ue-card fu"><div class="num">85%+</div><div class="label">Gross Margin</div><p>LLM costs ~$0.02-0.05/audit; commodity compute</p></div>
+<!-- Market math -->
+<section class="section market">
+  <div class="wrap market-grid">
+    <div class="fade-up">
+      <div class="eyebrow">The Math</div>
+      <h2 class="h2">Start with students. Expand along the life curve.</h2>
+      <p class="lead">We don't need to be everything to everyone. We need to become the default for the person who takes their career seriously — then hold them across every status change for the next forty years.</p>
+      <p class="math-note">Wedge: undergrads → alumni → mid-career. Direct subscription, 85%+ GM, .edu-verified student funnel, general-email path for everyone else.</p>
+    </div>
+
+    <div class="math-card fade-up">
+      <div class="math-row">
+        <span class="math-label">US undergraduates (Student)</span>
+        <span class="math-val mono">20M</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">Active job-seekers / year (Seeker)</span>
+        <span class="math-val mono">~40M</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">US knowledge workers (Holder)</span>
+        <span class="math-val mono">~100M</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">ARPU blend (annualized)</span>
+        <span class="math-val mono">~$90</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">Serviceable target (5 years)</span>
+        <span class="math-val mono">$100M+ ARR</span>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<!-- Expansion revenue -->
-<section style="background:var(--white)"><div class="si">
-  <div class="sl">Expansion Revenue</div>
-  <div class="st2">Student subscriptions are just the start.</div>
-  <div class="exp-grid">
-    <div class="exp-card fu"><h4>dilly University: SaaS Licensing</h4><p>Career centers license Dilly for all students. Flat annual fee. Batch audit API built. Measurable career readiness data for institutions.</p></div>
-    <div class="exp-card fu"><h4>dilly Recruiter: Talent Search</h4><p>Search scored, .edu-verified profiles. SaaS + placement fees. Higher signal, lower cost. Eliminates junk applications.</p></div>
-    <div class="exp-card fu"><h4>dilly Employer: Branding Tools</h4><p>Targeted outreach to high-scoring candidates. SaaS model. Reach students who are actually ready.</p></div>
-    <div class="exp-card fu"><h4>dilly AI Academy: Learning</h4><p>Courses and certifications that improve dilly scores. Score → learn → improve → get hired.</p></div>
-    <div class="exp-card fu"><h4>dilly College Matching + Essay Grader</h4><p>Expand downstream to high school. College matching by career goals. AI essay scoring. Parent plans.</p></div>
-    <div class="exp-card fu"><h4>India & Global Expansion</h4><p>One of the largest education markets in the world. US drives revenue per user. India drives scale and distribution.</p></div>
+<!-- Pricing -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="fade-up" style="max-width: 50rem;">
+      <div class="eyebrow">Business Model</div>
+      <h2 class="h2">D2C subscription. Gift + family sidecar. Never recruiter-pays.</h2>
+      <p class="lead">Three monthly plans, one annual discount, 6- and 12-month gift flows, and a family plan where parents sponsor students. The recruiter surface is built — we will never turn it into a channel that compromises the user.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="tier fade-up">
+        <span class="tier-name">Starter</span>
+        <div class="tier-price">Free</div>
+        <span class="tier-model">Onboarding floor · no card</span>
+        <ul class="tier-list">
+          <li>2 audits lifetime</li>
+          <li>10 AI chats per day</li>
+          <li>2 resume generations / month</li>
+          <li>No fit narratives</li>
+          <li>Feed browse, profile, timeline</li>
+        </ul>
+      </div>
+
+      <div class="tier featured fade-up">
+        <span class="tier-badge">Most Users</span>
+        <span class="tier-name">Dilly</span>
+        <div class="tier-price">$9.99<small>/mo</small></div>
+        <span class="tier-model">The working plan</span>
+        <ul class="tier-list">
+          <li>Unlimited fit reads</li>
+          <li>100 fit narratives / month</li>
+          <li>30 tailored resumes / month</li>
+          <li>100 AI chats per day</li>
+          <li>10 interview reviews / month</li>
+          <li>AI Arena full access</li>
+        </ul>
+      </div>
+
+      <div class="tier fade-up">
+        <span class="tier-name">Dilly Pro</span>
+        <div class="tier-price">$14.99<small>/mo</small></div>
+        <span class="tier-model">Serious users · Holder power</span>
+        <ul class="tier-list">
+          <li>Unlimited narratives</li>
+          <li>Unlimited tailored resumes</li>
+          <li>Unlimited interview reviews</li>
+          <li>My Career full dashboard</li>
+          <li>Raise brief + comp benchmark</li>
+          <li>Priority support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tier-foot fade-up">
+      <strong>+ Gift plans</strong> · 6-month and 12-month gift codes (Stripe one-time payment; recipient redeems at onboarding). Parents, alumni, schools.<br>
+      <strong>+ Family plan</strong> · One payer, multiple students. Parents pay for students — highest-LTV cohort we've found.
+    </div>
   </div>
-</div></section>
+</section>
 
-<!-- REVENUE PROJECTIONS -->
-<section><div class="si">
-  <div class="sl">Revenue Trajectory</div>
-  <div class="st2">$1M to $100M+ in five years.</div>
-  <div class="ue-grid" style="grid-template-columns:repeat(5,1fr)">
-    <div class="ue-card fu"><div class="num">$1M</div><div class="label">Year 1</div><p>Product proof + university &amp; recruiter pilots</p></div>
-    <div class="ue-card fu"><div class="num">$5M</div><div class="label">Year 2</div><p>Expanded university &amp; recruiter customers</p></div>
-    <div class="ue-card fu"><div class="num">$20M</div><div class="label">Year 3</div><p>Platform scaling across verticals</p></div>
-    <div class="ue-card fu"><div class="num">$50M</div><div class="label">Year 4</div><p>International expansion (India + global)</p></div>
-    <div class="ue-card fu"><div class="num">$100M+</div><div class="label">Year 5</div><p>Global platform with full product suite</p></div>
+<!-- Moats -->
+<section class="section" id="moats" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 19, 54, 0.5) 100%); border-top: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="fade-up" style="max-width: 50rem;">
+      <div class="eyebrow">Defensibility</div>
+      <h2 class="h2">Four moats, none of them marketing.</h2>
+      <p class="lead">The hard part of this business isn't acquisition — it's compounding value and controlled costs. Dilly is built so every user makes the product harder to copy and cheaper to run.</p>
+    </div>
+
+    <div class="divider"><span class="divider-mark">✦</span></div>
+
+    <div class="moat-grid">
+      <div class="moat fade-up">
+        <h4>The profile is the moat.</h4>
+        <p>Every conversation, every edit, every uploaded resume deepens a structured record that is unique to the user and non-portable. Switching cost compounds with time-in-product — and because users stay through every career status change, that compounding never resets.</p>
+      </div>
+      <div class="moat fade-up">
+        <h4>Three modes is the moat.</h4>
+        <p>Every competitor is a single-surface tool: a resume scanner, a job board, a comp benchmark. Dilly captures users across life events, so there's no reason to switch apps when status changes. The switch itself is a retention event.</p>
+      </div>
+      <div class="moat fade-up">
+        <h4>Cost efficiency is the moat.</h4>
+        <p>Haiku 4.5 exclusively. Prompt caching. Batch generation. Static lookup tables for AI-disruption data. $1.50/user/mo LLM spend at the current baseline. Every competitor running a Sonnet or Opus backbone cannot hit our price point without burning on every call.</p>
+      </div>
+      <div class="moat fade-up">
+        <h4>AI Arena is the moat.</h4>
+        <p>No competitor in this category ships AI-vulnerability scanning, replace-tests, or disruption intelligence. It's the only reason a user opens a career app when they aren't actively job-hunting — and the only defensive product for a market where the job itself is under threat.</p>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<!-- THE MOAT -->
-<section style="background:var(--white)"><div class="si">
-  <div class="sl">The Moat</div>
-  <div class="st2">Five compounding advantages.</div>
-  <div class="exp-grid" style="grid-template-columns:1fr">
-    <div class="exp-card fu"><h4>1. Trusted Score Signal</h4><p>The dilly score becomes the shared language between students, universities, and employers. Once a score is trusted, switching costs are enormous, like switching away from credit scores.</p></div>
-    <div class="exp-card fu"><h4>2. Continuous Data Improvement</h4><p>Every audit, every completion, every hiring outcome makes the scoring model smarter. More students = better scores = more trust = more students. Data flywheel that competitors can't replicate without the user base.</p></div>
-    <div class="exp-card fu"><h4>3. Habit Formation</h4><p>Scoring, coaching, learning, job search, and career planning all live in one place. Students check dilly daily. The integrated system creates switching costs that no single-feature competitor can match.</p></div>
-    <div class="exp-card fu"><h4>4. Lower-Cost, Higher-Signal Recruiting</h4><p>Recruiters get pre-scored, .edu-verified candidates, eliminating the 60% of applications that are junk. Once employers trust the signal, they recruit through dilly first.</p></div>
-    <div class="exp-card fu"><h4>5. Measurable Outcomes for Universities</h4><p>Career centers get real data on student readiness for the first time. dilly becomes the tech layer that makes career services measurable, accountable, and scalable.</p></div>
-  </div>
-</div></section>
-
-<section style="text-align:center;padding-top:40px">
-  <a href="team.html" class="btn btn-dark">Team & Vision →</a>
+<section class="next-cta">
+  <div class="next-cta-label">Next</div>
+  <h3>Who built this, and what $1.2M unlocks.</h3>
+  <a href="team.html">Meet the Team <span>→</span></a>
 </section>
 
 <footer>
-  <a href="index.html">Overview</a><a href="product.html">Product</a><a href="market.html">Market</a><a href="team.html">Team</a>
-  <p style="margin-top:10px">© 2026 Dilly · hellodilly.com</p>
+  <div class="foot">
+    <div>© 2026 Dilly · Confidential · Not for distribution</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="market.html">Market</a>
+      <a href="team.html">Team</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-const ob=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1});
-document.querySelectorAll('.fu').forEach(el=>ob.observe(el));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
+
 </body>
 </html>

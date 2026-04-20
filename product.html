@@ -3,182 +3,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product · Dilly Investors</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#FAFAFA;--white:#FFF;--g50:#F8F9FA;--g100:#F1F3F5;--g200:#E9ECEF;--g300:#DEE2E6;--g400:#CED4DA;--g500:#ADB5BD;--g600:#868E96;--g700:#495057;--g800:#343A40;--g900:#212529;--blue:#2563EB;--blue-light:#EFF6FF;--green:#059669;--green-light:#ECFDF5;--amber:#D97706;--amber-light:#FFFBEB;--coral:#DC2626;--gold:#C9A84C;--gold-light:#FDF8EC}
-html{scroll-behavior:smooth}body{background:var(--bg);color:var(--g800);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--g200);padding:14px 0}
-.ni{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--g900);text-decoration:none;letter-spacing:-0.5px;display:inline-flex;align-items:center;gap:6px}.logo span{color:var(--gold)}
-.nl{display:flex;gap:28px;align-items:center}.nl a{color:var(--g600);text-decoration:none;font-size:13px;font-weight:500}.nl a:hover{color:var(--g900)}.nl a.act{color:var(--blue)}
-.nc{background:var(--g900);color:#fff;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none}
-.mm{display:none;background:0;border:0;font-size:22px;cursor:pointer;color:var(--g700)}
-section{padding:80px 32px}.si{max-width:1100px;margin:0 auto}
-.sl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
-.st2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,3.5vw,36px);line-height:1.15;color:var(--g900);margin-bottom:12px}
-.ss{font-size:15px;color:var(--g600);max-width:520px;line-height:1.7}
-footer{border-top:1px solid var(--g200);padding:32px;text-align:center;font-size:12px;color:var(--g500)}
-footer a{color:var(--g500);text-decoration:none;margin:0 10px}
-.fu{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}.fu.v{opacity:1;transform:translateY(0)}
-
-/* Page hero */
-.ph{padding:140px 32px 60px;text-align:center}
-.ph h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(32px,5vw,48px);color:var(--g900);margin-bottom:12px}
-.ph p{font-size:17px;color:var(--g600);max-width:560px;margin:0 auto}
-
-/* Feature row */
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:64px 0;border-bottom:1px solid var(--g200)}
-.fr:last-child{border-bottom:0}
-.fr.rv{direction:rtl}.fr.rv>*{direction:ltr}
-.fr-text h3{font-family:'Playfair Display',serif;font-weight:700;font-size:24px;color:var(--g900);margin-bottom:8px}
-.fr-text p{font-size:14px;color:var(--g600);line-height:1.7;margin-bottom:12px}
-.fr-text .tag{display:inline-flex;align-items:center;gap:4px;background:var(--blue-light);border:1px solid rgba(37,99,235,.12);border-radius:6px;padding:3px 9px;font-size:10px;color:var(--blue);font-weight:600;margin-right:4px;margin-bottom:4px}
-.fr-text .tag.green{background:var(--green-light);border-color:rgba(5,150,105,.12);color:var(--green)}
-.fr-text .tag.amber{background:var(--amber-light);border-color:rgba(217,119,6,.12);color:var(--amber)}
-.fr-text .quote{background:var(--g50);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:12px 16px;font-size:12px;color:var(--g600);line-height:1.7;margin-top:12px;font-style:italic}
-.fr-phones{display:flex;gap:12px;justify-content:center}
-.fr-phone{width:200px;border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.1);border:1px solid var(--g200)}
-.fr-phone img{width:100%;display:block}
-.fr-phone.tl{transform:rotate(-2deg) translateY(10px)}.fr-phone.tr{transform:rotate(2deg) translateY(10px)}
-
-.btn{padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-dark{background:var(--g900);color:#fff}.btn-dark:hover{background:var(--g700)}
-
-@media(max-width:900px){.fr,.fr.rv{grid-template-columns:1fr;direction:ltr;gap:32px;text-align:center}.nl{display:none}.mm{display:block}.fr-phone{width:160px}}
-</style>
+<title>Product · Dilly Investor Overview</title>
+<meta name="description" content="The four surfaces, the three modes, the stack. How Dilly works end-to-end.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav><div class="ni">
-  <a href="index.html" class="logo"><img src="dilly_logo-removebg-preview (1).png" alt="dilly" style="height:22px;margin-top:4px"> investors</a>
-  <div class="nl">
-    <a href="index.html">Overview</a><a href="product.html" class="act">Product</a><a href="market.html">Market & Model</a><a href="team.html">Team & Vision</a>
-    <a class="nc" href="mailto:dilan@hellodilly.com">Get in Touch</a>
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-mark serif">Dilly</span>
+      <span class="brand-tag">Investor Overview</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html" class="active">Product</a>
+      <a href="market.html">Market</a>
+      <a href="team.html">Team</a>
+    </div>
+    <a href="mailto:dilan@hellodilly.com" class="nav-cta">Request Deck</a>
   </div>
-  <button class="mm" onclick="let n=document.querySelector('.nl');n.style.display=n.style.display==='flex'?'none':'flex'">☰</button>
-</div></nav>
+</nav>
 
-<div class="ph">
-  <h1>The full product</h1>
-  <p>11 products. Every feature below is built and running. Not wireframes. Not mockups. Production code scoring real student resumes across 22 career fields. .edu-verified students only.</p>
-</div>
+<!-- Page hero -->
+<header class="page-hero">
+  <div class="wrap fade-up">
+    <div class="eyebrow">The Product</div>
+    <h1>Four surfaces. One profile. <em>Zero scores.</em></h1>
+    <p class="lead">Everything Dilly does is grounded in a living profile the user builds through conversation. No Smart/Grit/Build. No ranking. No leaderboards. Fit narratives, letters, disruption intelligence — reads on the profile, not reductions of it.</p>
+  </div>
+</header>
 
-<section><div class="si">
+<!-- Four surfaces -->
+<section class="section">
+  <div class="wrap">
+    <div class="surfaces">
+      <article class="surface fade-up">
+        <div class="surface-num">01 — Foundation</div>
+        <h3 class="surface-title">The Dilly Profile</h3>
+        <p class="surface-desc">
+          A structured, growing record of who the user is: experiences, goals, fears, beyond-resume facts, target companies, deadlines. Built from conversation, seeded from a resume, edited directly. 16+ fact categories stored as structured JSON with dual-write to Postgres. The profile is the product — everything else is a read on it.
+        </p>
+        <span class="surface-tag">profile.json · students table · 2,212 LOC</span>
+      </article>
 
-<div class="fr fu">
-  <div class="fr-text">
-    <div class="sl">Core Feature</div>
-    <h3>Resume Audit & Dilly Score</h3>
-    <p>Upload a resume. Get scored 0-100 across four dimensions, weighted by career track across 22 fields with cohort comparison. Evidence cited from the student's actual content. Students see 3x increase in callbacks after targeted edits.</p>
-    <span class="tag">Smart</span><span class="tag green">Grit</span><span class="tag amber">Build</span><span class="tag">Job Readiness</span>
-    <div class="quote">"Your Grit score is held back by vague verbs. Change 'assisted with' to 'supported 200+ visits/week.' Quantify impact."</div>
-  </div>
-  <div class="fr-phones">
-    <div class="fr-phone tl"><img src="dillynewaudit.png" alt="Audit"></div>
-    <div class="fr-phone tr"><img src="dillyhome.png" alt="Home"></div>
-  </div>
-</div>
+      <article class="surface fade-up">
+        <div class="surface-num">02 — Signal</div>
+        <h3 class="surface-title">Fit Narratives</h3>
+        <p class="surface-desc">
+          For every job, Dilly writes a personal read: what the user has that matches, what's missing, what to do. One powerful sentence that never truncates across devices. Haiku 4.5. ~$0.0002 per narrative. Cached per user-job pair. Pre-generated for the entire feed via batch runs, not on-demand.
+        </p>
+        <span class="surface-tag">Haiku 4.5 · $0.0002/pair · batch-generated</span>
+      </article>
 
-<div class="fr rv fu">
-  <div class="fr-text">
-    <div class="sl">AI Coaching</div>
-    <h3>Dilly AI: Career Coach</h3>
-    <p>Thread-based AI that knows the student's resume, scores, applications, and deadlines. Ask "Am I ready for Stripe?" and get a real gap analysis. Coach mode, mock interviews, and custom job analysis for any listing. 60x cheaper than a professional career coach.</p>
-    <span class="tag">Full context awareness</span><span class="tag">24/7 availability</span><span class="tag">Mock interviews</span><span class="tag">Custom job analysis</span>
-    <div class="quote">"Your Build gap is the real problem 16 points below Stripe's bar. Ship one project in 4-6 weeks and you're competitive."</div>
-  </div>
-  <div class="fr-phones">
-    <div class="fr-phone tl"><img src="dillyaiscores.png" alt="AI Scores"></div>
-    <div class="fr-phone tr"><img src="dillyai.png" alt="AI Gaps"></div>
-  </div>
-</div>
+      <article class="surface fade-up">
+        <div class="surface-num">03 — Command</div>
+        <h3 class="surface-title">What We Think</h3>
+        <p class="surface-desc">
+          A personal letter from Dilly that reads the full profile, connects dots across experiences, identifies patterns, names the next moves. What a great career advisor would write if they had read everything you wrote. Refreshes as the profile grows. Weekly brief variant sends the same treatment to email.
+        </p>
+        <span class="surface-tag">insights.py · weekly_brief.py</span>
+      </article>
 
-<div class="fr fu">
-  <div class="fr-text">
-    <div class="sl">Job Intelligence</div>
-    <h3>Internship Matching & Gap Analysis</h3>
-    <p>97+ real internships from Stripe, Airbnb, Cloudflare, and more. Each listing shows readiness with dimension bars and a personalized insight on how to close gaps. Students apply only when ready, eliminating the junk applications flooding recruiter inboxes.</p>
-    <span class="tag green">Ready</span><span class="tag amber">Almost</span><span class="tag" style="background:#FEF2F2;border-color:rgba(220,38,38,.12);color:var(--coral)">Gap</span>
-  </div>
-  <div class="fr-phones">
-    <div class="fr-phone tl"><img src="dillyinternshiplist.png" alt="Listings"></div>
-    <div class="fr-phone tr"><img src="dillyinternships.png" alt="Stripe"></div>
-  </div>
-</div>
+      <article class="surface fade-up">
+        <div class="surface-num">04 — Defense</div>
+        <h3 class="surface-title">AI Arena</h3>
+        <p class="surface-desc">
+          AI disruption intelligence nobody else is shipping. Cohort-specific threat reports ("73% of accountants at risk in five years"), weekly signals, bullet-by-bullet vulnerability scans on the user's resume, replace-tests where AI attempts their role, and career-path simulation with AI factored in. A reason to open the app every week even when you aren't job-hunting.
+        </p>
+        <span class="surface-tag">ai_arena.py · 736 LOC · 18 path-lenses</span>
+      </article>
+    </div>
 
-<div class="fr rv fu">
-  <div class="fr-text">
-    <div class="sl">ATS Intelligence</div>
-    <h3>ATS Scanner: 6 Systems</h3>
-    <p>Scans against Greenhouse, Workday, iCIMS, Taleo, Lever, and SuccessFactors. Per-system scores, parse previews, formatting issues, and specific fixes. 75% of resumes are rejected by ATS before a human sees them. Dilly fixes that.</p>
-    <span class="tag">6 ATS vendors</span><span class="tag">Parse preview</span><span class="tag">150+ company lookup</span><span class="tag">Per-system scoring</span>
+    <div class="cost-card fade-up">
+      <div class="cost-num mono">$1.50</div>
+      <div class="cost-body">
+        <h3>LLM cost per user per month — and that's the whole moat.</h3>
+        <p>
+          Anthropic Claude Haiku 4.5 exclusively. Prompt caching eliminates 90% of repeat reads. Batch narrative generation. Static lookup tables for disruption data (one-time $5 generation cost, then free forever). Feature-level gating by plan. This is how an $85 ARPU product runs at <strong>85%+ gross margin</strong> while paying for the best career AI available.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="fr-phones">
-    <div class="fr-phone"><img src="dillyats.png" alt="ATS"></div>
-  </div>
-</div>
+</section>
 
-<div class="fr fu">
-  <div class="fr-text">
-    <div class="sl">Editing</div>
-    <h3>Resume Editor with Live Scoring</h3>
-    <p>Every bullet point gets a score. Students see "Good" vs "Needs work" in real time. AI suggests specific rewrites with quantified impact. Overall score updates as they edit.</p>
-    <span class="tag">Per-bullet scoring</span><span class="tag">AI rewrites</span>
-  </div>
-  <div class="fr-phones">
-    <div class="fr-phone"><img src="dillyresumeeditor.png" alt="Editor"></div>
-  </div>
-</div>
+<!-- Three modes (detailed) -->
+<section class="section" id="modes" style="background: linear-gradient(180deg, rgba(0, 19, 54, 0.45) 0%, transparent 100%); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="fade-up" style="max-width: 50rem;">
+      <div class="eyebrow">Three Modes, One Codebase</div>
+      <h2 class="h2">The product reshapes around where the user is.</h2>
+      <p class="lead">Every competitor is a single-surface tool. Dilly captures users across life events, so there's no reason to switch apps when career status changes. The switch itself is a retention event.</p>
+    </div>
 
-<div class="fr rv fu">
-  <div class="fr-text">
-    <div class="sl">Engagement</div>
-    <h3>Leaderboard, Tracker, Calendar</h3>
-    <p>.edu-verified peer rankings by track and dimension. Full application pipeline (Saved → Applied → Interviewing → Offer). Calendar with deadlines. Score history over time. The habit loop that drives daily engagement.</p>
-    <span class="tag">Leaderboard</span><span class="tag">Application CRM</span><span class="tag">Calendar</span><span class="tag">Score history</span>
-  </div>
-  <div class="fr-phones">
-    <div class="fr-phone tl"><img src="dillyrank.png" alt="Rank"></div>
-    <div class="fr-phone tr"><img src="dillyinternshiptracker.png" alt="Tracker"></div>
-  </div>
-</div>
+    <div class="modes-grid">
+      <article class="mode fade-up">
+        <div class="mode-tag">Mode 01</div>
+        <h3 class="mode-title">Student</h3>
+        <div class="mode-sub">Pre-first-job</div>
+        <p class="mode-desc">Before the first full-time role. Internship hunt, ATS-tailored resumes, tutorials, audits. Built for .edu — the profile grows through onboarding, voice chats, and resume upload.</p>
+        <ul class="mode-list">
+          <li>Internship feed, cohort-matched</li>
+          <li>ATS resume builder</li>
+          <li>Parent-invite + family plans</li>
+          <li>Interview prep + mock rounds</li>
+        </ul>
+      </article>
 
-</div></section>
+      <article class="mode fade-up">
+        <div class="mode-tag">Mode 02</div>
+        <h3 class="mode-title">Seeker</h3>
+        <div class="mode-sub">Actively applying</div>
+        <p class="mode-desc">Between jobs. Any email accepted (the general path). Job feed with fit narratives, tailored resumes per role, pipeline tracker, recruiter outreach templates, and interview practice that reads your actual profile.</p>
+        <ul class="mode-list">
+          <li>Per-job fit narrative</li>
+          <li>Application tracker + Kanban</li>
+          <li>Recruiter outreach via Resend</li>
+          <li>Apply-Through-Dilly verified badge</li>
+        </ul>
+      </article>
 
-<!-- PLATFORM VISION -->
-<section style="background:var(--white)"><div class="si">
-  <div class="sl">The Platform</div>
-  <div class="fr-text"><h3>11 products. One ecosystem. From high school to career.</h3>
-  <p style="font-size:14px;color:var(--g600);line-height:1.7;margin-bottom:24px">dilly Student is live today. The full platform expands into learning, scoring, matching, hiring, and outcomes, serving students, parents, universities, and employers.</p></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px">
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly Student</div><div style="font-size:11px;color:var(--green);font-weight:600;margin-bottom:4px">LIVE NOW</div><div style="font-size:12px;color:var(--g600)">Resume scoring, AI coaching, job matching, ATS scanning. $9.99/mo subscription.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly AI Academy</div><div style="font-size:11px;color:var(--blue);font-weight:600;margin-bottom:4px">NEXT</div><div style="font-size:12px;color:var(--g600)">Skill-building courses and certifications that directly improve dilly scores. Subscription + cert upsells.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly Voice</div><div style="font-size:11px;color:var(--blue);font-weight:600;margin-bottom:4px">NEXT</div><div style="font-size:12px;color:var(--g600)">AI-powered mock interviews and voice coaching. Included in subscription + premium tiers.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly College Matching</div><div style="font-size:11px;color:var(--amber);font-weight:600;margin-bottom:4px">ROADMAP</div><div style="font-size:12px;color:var(--g600)">High school students find the right college based on career goals. Subscription + parent plans.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly Essay Grader</div><div style="font-size:11px;color:var(--amber);font-weight:600;margin-bottom:4px">ROADMAP</div><div style="font-size:12px;color:var(--g600)">AI-powered college essay scoring and feedback. Subscription + premium human reviews.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">The Daily dilly</div><div style="font-size:11px;color:var(--amber);font-weight:600;margin-bottom:4px">ROADMAP</div><div style="font-size:12px;color:var(--g600)">Daily career intelligence feed for students and parents. Engagement driver + sponsorship revenue.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly Recruiter</div><div style="font-size:11px;color:var(--amber);font-weight:600;margin-bottom:4px">ROADMAP</div><div style="font-size:12px;color:var(--g600)">Search scored, verified student profiles. SaaS + placement fees. Eliminates junk applications.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly Employer</div><div style="font-size:11px;color:var(--amber);font-weight:600;margin-bottom:4px">ROADMAP</div><div style="font-size:12px;color:var(--g600)">Employer branding tools and targeted outreach to high-scoring candidates. SaaS model.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly University</div><div style="font-size:11px;color:var(--amber);font-weight:600;margin-bottom:4px">ROADMAP</div><div style="font-size:12px;color:var(--g600)">Career center SaaS license. Batch audit API. Measurable career readiness data for institutions.</div></div>
-    <div style="background:var(--bg);border:1px solid var(--g200);border-radius:12px;padding:18px 20px" class="fu"><div style="font-size:13px;font-weight:700;color:var(--g900)">dilly Internship & Job Search</div><div style="font-size:11px;color:var(--blue);font-weight:600;margin-bottom:4px">NEXT</div><div style="font-size:12px;color:var(--g600)">Expanded job board with recruiter-funded listings + student subscription access.</div></div>
+      <article class="mode fade-up">
+        <div class="mode-tag">Mode 03</div>
+        <h3 class="mode-title">Holder</h3>
+        <div class="mode-sub">Employed · benchmarking</div>
+        <p class="mode-desc">Already in the job. The My Career dashboard: comp benchmark, trajectory timeline, skills arsenal, tenure read, raise brief, and an always-ready escape hatch. Career management for the 90% of time you're not applying.</p>
+        <ul class="mode-list">
+          <li>Compensation benchmark</li>
+          <li>Skills arsenal + trajectory</li>
+          <li>Raise brief generator</li>
+          <li>One-tap escape hatch → Seeker</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="mode-switch-note fade-up">
+      Users flip between modes via a life-event switch in Settings —
+      <strong>"I got a job"</strong> / <strong>"I lost my job"</strong> — and each flip triggers a mode-specific transition tutorial. The profile and history carry over; the product changes.
+    </div>
   </div>
-</div></section>
+</section>
 
-<section style="text-align:center;padding-top:40px">
-  <a href="market.html" class="btn btn-dark">Market & Business Model →</a>
+<!-- Retention primitives -->
+<section class="section">
+  <div class="wrap">
+    <div class="fade-up" style="max-width: 50rem;">
+      <div class="eyebrow">Retention Architecture</div>
+      <h2 class="h2">The moat isn't the features. It's the return.</h2>
+      <p class="lead">Career tools are graveyards — users sign up once and forget. Dilly ships retention primitives as first-class product, engineered for daily and weekly return on a surface that otherwise sees a user twice a year.</p>
+    </div>
+
+    <div class="loops-grid">
+      <div class="loop fade-up">
+        <span class="loop-tag">Daily</span>
+        <div class="loop-body">
+          <h4>Home Feed Cards</h4>
+          <p>A rotating daily card: Mon weekly brief, Tue AI threat check, Wed profile gap nudge, Thu job digest, Fri win-of-the-week. One-tap engagement. Built to return, not to demand.</p>
+        </div>
+      </div>
+      <div class="loop fade-up">
+        <span class="loop-tag">Weekly</span>
+        <div class="loop-body">
+          <h4>Cohort Pulse</h4>
+          <p>Weekly precomputed card: metrics, trends, peer comparisons — scoped to the user's cohort. Batch-generated via Haiku at ~$0.0003 per pulse.</p>
+        </div>
+      </div>
+      <div class="loop fade-up">
+        <span class="loop-tag">Memory</span>
+        <div class="loop-body">
+          <h4>Second Brain</h4>
+          <p>Chronological career timeline — events, decisions, achievements, connections. A log of what you did, not what you failed at. Worth opening the app just to add to.</p>
+        </div>
+      </div>
+      <div class="loop fade-up">
+        <span class="loop-tag">Intelligence</span>
+        <div class="loop-body">
+          <h4>AI Arena — Weekly Signal</h4>
+          <p>A weekly curated signal about the user's field, framed through 18 path-aware advisor lenses. Same data, 18 different readings — a structural reason to return when no one else in the category offers one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stack -->
+<section class="section stack">
+  <div class="wrap">
+    <div class="fade-up" style="max-width: 50rem;">
+      <div class="eyebrow">The Stack</div>
+      <h2 class="h2">Shipped, not speculative.</h2>
+      <p class="lead">50+ backend routers, 14,000+ lines of profile / audit / resume / AI code, a 2,075-line recruiter surface built and ready, and an iOS app on build 301+ distributed via TestFlight.</p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-item fade-up">
+        <div class="stack-label">Mobile</div>
+        <div class="stack-val">Expo · React Native</div>
+        <div class="stack-desc">iOS build 301+ on TestFlight · SDK 55 · file-based routing · secure keychain auth · 3-phase boot machine</div>
+      </div>
+      <div class="stack-item fade-up">
+        <div class="stack-label">Backend</div>
+        <div class="stack-val">FastAPI on Railway</div>
+        <div class="stack-desc">Python · 50+ routers · APScheduler cron · request-ID logging · global exception envelope</div>
+      </div>
+      <div class="stack-item fade-up">
+        <div class="stack-label">Data</div>
+        <div class="stack-val">Postgres · AWS RDS</div>
+        <div class="stack-desc">psycopg2 · file-based profile snapshots · 20-audit rolling buffer · pgvector planned for embeddings</div>
+      </div>
+      <div class="stack-item fade-up">
+        <div class="stack-label">AI</div>
+        <div class="stack-val">Anthropic Haiku 4.5</div>
+        <div class="stack-desc">claude-haiku-4-5-20251001 · exclusive across all tiers · prompt caching · per-feature token ledger</div>
+      </div>
+      <div class="stack-item fade-up">
+        <div class="stack-label">Payments</div>
+        <div class="stack-val">Stripe</div>
+        <div class="stack-desc">Subscription + 6m/12m gift + family plan · idempotent webhooks · promo codes · cancellation flow</div>
+      </div>
+      <div class="stack-item fade-up">
+        <div class="stack-label">Jobs</div>
+        <div class="stack-val">6 ATS Vendors</div>
+        <div class="stack-desc">Greenhouse · Lever · SmartRecruiters · Ashby · USAJobs · NSF REU · daily crawl at 02:00 UTC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="next-cta">
+  <div class="next-cta-label">Next</div>
+  <h3>The market, the math, the business model.</h3>
+  <a href="market.html">See the Market <span>→</span></a>
 </section>
 
 <footer>
-  <a href="index.html">Overview</a><a href="product.html">Product</a><a href="market.html">Market</a><a href="team.html">Team</a>
-  <p style="margin-top:10px">© 2026 Dilly · hellodilly.com</p>
+  <div class="foot">
+    <div>© 2026 Dilly · Confidential · Not for distribution</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="market.html">Market</a>
+      <a href="team.html">Team</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-const ob=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1});
-document.querySelectorAll('.fu').forEach(el=>ob.observe(el));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
+
 </body>
 </html>

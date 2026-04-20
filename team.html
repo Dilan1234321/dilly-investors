@@ -3,238 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team & Vision · Dilly Investors</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#FAFAFA;--white:#FFF;--g50:#F8F9FA;--g100:#F1F3F5;--g200:#E9ECEF;--g300:#DEE2E6;--g500:#ADB5BD;--g600:#868E96;--g700:#495057;--g800:#343A40;--g900:#212529;--blue:#2563EB;--blue-light:#EFF6FF;--green:#059669;--green-light:#ECFDF5;--amber:#D97706;--amber-light:#FFFBEB;--coral:#DC2626;--gold:#C9A84C}
-html{scroll-behavior:smooth}body{background:var(--bg);color:var(--g800);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--g200);padding:14px 0}
-.ni{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--g900);text-decoration:none;display:inline-flex;align-items:center;gap:6px}.logo span{color:var(--gold)}
-.nl{display:flex;gap:28px;align-items:center}.nl a{color:var(--g600);text-decoration:none;font-size:13px;font-weight:500}.nl a:hover{color:var(--g900)}.nl a.act{color:var(--blue)}
-.nc{background:var(--g900);color:#fff;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none}
-.mm{display:none;background:0;border:0;font-size:22px;cursor:pointer;color:var(--g700)}
-section{padding:80px 32px}.si{max-width:1100px;margin:0 auto}
-.sl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
-.st2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,3.5vw,36px);line-height:1.15;color:var(--g900);margin-bottom:12px}
-.ss{font-size:15px;color:var(--g600);max-width:520px;line-height:1.7}
-footer{border-top:1px solid var(--g200);padding:32px;text-align:center;font-size:12px;color:var(--g500)}
-footer a{color:var(--g500);text-decoration:none;margin:0 10px}
-.fu{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}.fu.v{opacity:1;transform:translateY(0)}
-.ph{padding:140px 32px 60px;text-align:center}
-.ph h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(32px,5vw,48px);color:var(--g900);margin-bottom:12px}
-.ph p{font-size:17px;color:var(--g600);max-width:560px;margin:0 auto}
-.btn{padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-dark{background:var(--g900);color:#fff}.btn-dark:hover{background:var(--g700)}
-.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:#1d4ed8}
-
-/* Founder card */
-.founder-card{background:var(--white);border:1px solid var(--g200);border-radius:20px;padding:40px 36px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;margin-top:32px}
-.founder-avatar{width:80px;height:80px;border-radius:50%;background:var(--g900);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;font-size:28px;color:#fff}
-.founder-name{font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:var(--g900)}
-.founder-title{font-size:13px;color:var(--blue);font-weight:600;margin-top:2px}
-.founder-bio{font-size:14px;color:var(--g600);line-height:1.7;margin-top:12px}
-.founder-bio strong{color:var(--g800)}
-.founder-highlights{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.founder-highlights .tag{background:var(--g50);border:1px solid var(--g200);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--g700);font-weight:500}
-
-/* Hiring */
-.hire-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
-.hire-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:24px 22px}
-.hire-card h4{font-size:15px;font-weight:700;color:var(--g900);margin-bottom:4px}
-.hire-card .role{font-size:11px;color:var(--amber);font-weight:600;margin-bottom:8px}
-.hire-card p{font-size:13px;color:var(--g600);line-height:1.6}
-
-/* GTM phases */
-.phase-list{margin-top:32px;display:flex;flex-direction:column;gap:16px}
-.phase{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:20px 24px;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
-.phase-badge{text-align:center}
-.phase-badge .label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px}
-.phase-badge .when{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--g900)}
-.phase-content h4{font-size:15px;font-weight:700;color:var(--g900);margin-bottom:4px}
-.phase-content p{font-size:13px;color:var(--g600);line-height:1.6}
-.phase:nth-child(1) .phase-badge .label{color:var(--green)}
-.phase:nth-child(2) .phase-badge .label{color:var(--blue)}
-.phase:nth-child(3) .phase-badge .label{color:var(--gold)}
-
-/* Why now */
-.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
-.why-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:24px 22px}
-.why-card h4{font-size:14px;font-weight:700;color:var(--g900);margin-bottom:6px}
-.why-card p{font-size:13px;color:var(--g600);line-height:1.6}
-
-/* Ask */
-.ask-section{background:var(--g900);color:#fff;border-radius:20px;padding:48px 40px;margin-top:60px}
-.ask-section .sl{color:var(--gold)}
-.ask-section .st2{color:#fff}
-.ask-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:32px}
-.ask-funds h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:16px}
-.fund-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.fund-row .label{font-size:13px;color:rgba(255,255,255,.7)}
-.fund-row .pct{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold)}
-.ask-miles h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:16px}
-.mile-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.mile-row .what{font-size:13px;color:rgba(255,255,255,.7)}
-.mile-row .when{font-size:13px;font-weight:700;color:#fff}
-
-/* Closing */
-.closing{text-align:center;padding:80px 32px}
-.closing h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(28px,4vw,42px);color:var(--g900);margin-bottom:12px;line-height:1.15}
-.closing p{font-size:16px;color:var(--g600);margin-bottom:8px;line-height:1.7}
-.closing .gold{color:var(--gold);font-weight:700}
-.closing .contact{margin-top:20px;font-size:14px;color:var(--g500)}
-.closing .contact a{color:var(--blue);text-decoration:none}
-
-@media(max-width:900px){
-  .founder-card{grid-template-columns:1fr;text-align:center}.founder-avatar{margin:0 auto}
-  .hire-grid,.why-grid{grid-template-columns:1fr}.ask-row{grid-template-columns:1fr}
-  .phase{grid-template-columns:1fr}.nl{display:none}.mm{display:block}
-}
-</style>
+<title>Team · Dilly Investor Overview</title>
+<meta name="description" content="Who built Dilly, and what $1.2M pre-seed unlocks.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav><div class="ni">
-  <a href="index.html" class="logo"><img src="dilly_logo-removebg-preview (1).png" alt="dilly" style="height:22px;margin-top:4px"> investors</a>
-  <div class="nl">
-    <a href="index.html">Overview</a><a href="product.html">Product</a><a href="market.html">Market & Model</a><a href="team.html" class="act">Team & Vision</a>
-    <a class="nc" href="mailto:kochhardilan05@gmail.com">Get in Touch</a>
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-mark serif">Dilly</span>
+      <span class="brand-tag">Investor Overview</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="market.html">Market</a>
+      <a href="team.html" class="active">Team</a>
+    </div>
+    <a href="mailto:dilan@hellodilly.com" class="nav-cta">Request Deck</a>
   </div>
-  <button class="mm" onclick="let n=document.querySelector('.nl');n.style.display=n.style.display==='flex'?'none':'flex'">☰</button>
-</div></nav>
+</nav>
 
-<div class="ph">
-  <h1>Team & vision</h1>
-  <p>One founder built the entire platform: 11 products, production code, scoring real resumes. Here's who, why, and what's next.</p>
-</div>
+<!-- Page hero -->
+<header class="page-hero">
+  <div class="wrap fade-up">
+    <div class="eyebrow">Team & Ask</div>
+    <h1>Built by <em>one founder.</em> Looking for believers.</h1>
+    <p class="lead">Dilly is a solo build — every line of the iOS app, every backend router, every fit narrative prompt, every Stripe flow. The product is shipped. What the round funds is what comes next: the launch, the first hires, the infrastructure to carry ten thousand users and their profiles.</p>
+  </div>
+</header>
 
-<!-- FOUNDER -->
-<section style="background:var(--white)"><div class="si">
-  <div class="sl">The Team</div>
-  <div class="st2">One person. No employees. All solo.</div>
-  <div class="ss">That's the strongest signal about execution speed, technical ability, and commitment.</div>
-  <div class="founder-card fu">
-    <div class="founder-avatar">DK</div>
-    <div>
-      <div class="founder-name">Dilan (dilly) Kochhar</div>
-      <div class="founder-title">Founder · Data Science · University of Tampa '27</div>
-      <div class="founder-bio">
-        <strong>20 years old.</strong> Data Science major, minors in Math and CS at the University of Tampa. Lived the problem. Countless applications through Handshake, generic career center advice, no signal on where he stood. Built the entire dilly platform solo: 11 products, 22 career fields, 6 ATS integrations, mobile-first, in production.
-        <br><br><strong>Previously:</strong> AI Engineering Intern at KVR Properties (predictive model, 88% accuracy on lease conversion). Web development agency (UTampa AKPsi, Mu Epsilon Delta, Erickson Flooring). Co-founded The Kochhar Education Foundation: $22K+ raised, 60 computers donated, thousands of lives changed in rural Southern India.
+<!-- Founder card -->
+<section class="section">
+  <div class="wrap">
+    <div class="fade-up" style="max-width: 50rem;">
+      <div class="eyebrow">Founder</div>
+      <h2 class="h2">The person who had to build this.</h2>
+    </div>
+
+    <div class="founder-card fade-up">
+      <div class="founder-name">Dilan Kochhar</div>
+      <div class="founder-role">Founder · Built the Whole Thing</div>
+      <p class="founder-bio">
+        <strong>20. Data Science at the University of Tampa.</strong> Started Dilly because the career center was unreachable, the resume scanners were useless, and the AI tools everyone else was shipping were all pointed in the wrong direction — toward polishing a document nobody reads.
+      </p>
+      <p class="founder-bio">
+        Since then: shipped iOS build 301+ to TestFlight, stood up 50+ FastAPI routers, wrote the cost ledger that keeps LLM spend under $1.50/user/mo, integrated Stripe across three checkout flows, built 22 cohorts × 18 path-aware advisor lenses, and moved the product from a single-mode resume tool to a three-mode career OS.
+      </p>
+      <p class="founder-bio">
+        Dilly is profile-first because it's personal. The people this product helps are the ones who didn't get the career-center appointment, didn't get the referral, didn't know what "Grit" was supposed to measure anyway. It's for them.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Why now -->
+<section class="section" style="background: linear-gradient(180deg, rgba(0, 19, 54, 0.45) 0%, transparent 100%); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="fade-up" style="max-width: 50rem;">
+      <div class="eyebrow">Why Now</div>
+      <h2 class="h2">The product and the moment arrived together.</h2>
+      <p class="lead">Three things converged to make this the right build at the right time — and the reason a solo founder got it this far is because the cost-per-call finally makes a profile-first AI career platform economically possible.</p>
+    </div>
+
+    <div class="moat-grid">
+      <div class="moat fade-up">
+        <h4>AI disruption is the demand.</h4>
+        <p>30–70% of roles in most cohorts face meaningful AI disruption in five years. The people in those roles know it. There is no existing product for a career-worried knowledge worker — just generic resume scanners. That vacuum is the opening.</p>
       </div>
-      <div class="founder-highlights">
-        <span class="tag">React Native</span>
-        <span class="tag">Python / FastAPI</span>
-        <span class="tag">AI / LLMs</span>
-        <span class="tag">Data Science</span>
-        <span class="tag">Full-Stack</span>
-        <span class="tag">Solo Founder</span>
-        <span class="tag">11 Products Built</span>
-        <span class="tag">Nonprofit Founder</span>
+      <div class="moat fade-up">
+        <h4>Haiku 4.5 is the unlock.</h4>
+        <p>Two years ago, running fit narratives + a What-We-Think letter + cohort pulses + AI-vulnerability scans on a student-priced subscription was impossible. Haiku 4.5 (plus caching plus batching) made it run at $1.50/user/mo. The economics only exist now.</p>
       </div>
-    </div>
-  </div>
-</div></section>
-
-<!-- HIRING -->
-<section><div class="si">
-  <div class="sl">Hiring</div>
-  <div class="st2">Two key hires to scale.</div>
-  <div class="hire-grid">
-    <div class="hire-card fu">
-      <h4>Technical Co-Founder</h4>
-      <div class="role">ML / AI or Full-Stack Engineer</div>
-      <p>Experience with scoring systems, ranking algorithms, NLP, or recommendation engines. Someone who's built ML products at scale and wants to build the talent graph.</p>
-    </div>
-    <div class="hire-card fu">
-      <h4>Head of Growth</h4>
-      <div class="role">Campus GTM Specialist</div>
-      <p>Experience scaling student products. Ambassador programs, campus partnerships, organic growth. Ideally someone who's done this at a company like Chegg, Handshake, or a student fintech.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- GTM -->
-<section style="background:var(--white)"><div class="si">
-  <div class="sl">Go-to-Market</div>
-  <div class="st2">Campus by campus. Then national.</div>
-  <div class="phase-list">
-    <div class="phase fu">
-      <div class="phase-badge"><div class="label">Phase 1</div><div class="when">Apr 2026</div></div>
-      <div class="phase-content"><h4>University of Tampa</h4><p>Launch with waitlist quiz funnel. .edu-verified students only. Founding member pricing ($4.99/mo). Campus ambassadors. Career center partnership. Target: 100-200 paying subscribers in first semester.</p></div>
-    </div>
-    <div class="phase fu">
-      <div class="phase-badge"><div class="label">Phase 2</div><div class="when">Fall 2026</div></div>
-      <div class="phase-content"><h4>Florida Expansion</h4><p>5-10 Florida universities (UCF, USF, UF, FSU, FIU). Same playbook. Adding a school is a config change, not a rebuild. Target: 1,000+ paying subscribers.</p></div>
-    </div>
-    <div class="phase fu">
-      <div class="phase-badge"><div class="label">Phase 3</div><div class="when">2027</div></div>
-      <div class="phase-content"><h4>National + Recruiter Side + India</h4><p>Top 50-100 US universities. Recruiter-side launch + India expansion. Network effects: recruiters trust the signal → students want the score. Target: 10K+ subscribers, 25+ university partnerships.</p></div>
-    </div>
-  </div>
-</div></section>
-
-<!-- WHY NOW -->
-<section><div class="si">
-  <div class="sl">Why Now</div>
-  <div class="st2">Four forces converging.</div>
-  <div class="why-grid">
-    <div class="why-card fu"><h4>LLMs just became good enough</h4><p>Reliable resume scoring across 22 career fields, specific line edits, and thread-based coaching. Not possible 18 months ago.</p></div>
-    <div class="why-card fu"><h4>50% of entry-level roles face AI disruption</h4><p>Application volumes up, AI-generated resumes everywhere, six in ten applications are junk. Students need a way to stand out.</p></div>
-    <div class="why-card fu"><h4>Career centers are losing relevance</h4><p>1 advisor for every 2,263 students. Budgets flat, staff stretched. Dilly is a career center that never closes. 60x cheaper.</p></div>
-    <div class="why-card fu"><h4>The "career score" doesn't exist yet</h4><p>Credit scores transformed lending. A universal career readiness score could transform hiring. First mover builds the data moat. Every audit, every outcome, every hire makes the model smarter.</p></div>
-  </div>
-</div></section>
-
-<!-- THE ASK -->
-<section><div class="si">
-  <div class="ask-section fu">
-    <div class="sl">The Ask</div>
-    <div class="st2">Pre-seed · Let's talk</div>
-    <div class="ss" style="color:rgba(255,255,255,.6);margin-bottom:24px">The raise size is flexible. Open to the right partner over the right number.</div>
-    <div class="ask-row">
-      <div class="ask-funds">
-        <h4>Use of Funds · 18-Month Runway</h4>
-        <div class="fund-row"><span class="label">Engineering (1-2 hires, scale infra)</span><span class="pct">40%</span></div>
-        <div class="fund-row"><span class="label">Growth (ambassadors, partnerships, marketing)</span><span class="pct">30%</span></div>
-        <div class="fund-row"><span class="label">Operations (hosting, LLM API, App Store)</span><span class="pct">15%</span></div>
-        <div class="fund-row"><span class="label">Runway buffer (18 months to multi-campus PMF)</span><span class="pct">15%</span></div>
+      <div class="moat fade-up">
+        <h4>The category is empty.</h4>
+        <p>Jobscan is ATS scanning. VMock is resume scoring. Handshake is a job board. ChatGPT is a blank page. Nobody has shipped a profile-first, mode-aware, AI-defense-aware career OS. We got here first — and we got here because no incumbent could rebuild around the new economics fast enough.</p>
       </div>
-      <div class="ask-miles">
-        <h4>Milestones</h4>
-        <div class="mile-row"><span class="what">Launch at UTampa with live payments</span><span class="when">Apr 2026</span></div>
-        <div class="mile-row"><span class="what">100+ paying subscribers</span><span class="when">Jun 2026</span></div>
-        <div class="mile-row"><span class="what">Expand to 5 Florida schools</span><span class="when">Sep 2026</span></div>
-        <div class="mile-row"><span class="what">1,000+ paying subscribers</span><span class="when">Dec 2026</span></div>
-        <div class="mile-row"><span class="what">10K+ users · 25+ university partnerships</span><span class="when">Q1 2027</span></div>
-        <div class="mile-row"><span class="what">$1M revenue · India pilot</span><span class="when">Mid 2027</span></div>
-        <div class="mile-row"><span class="what">Series A ready</span><span class="when">Late 2027</span></div>
+      <div class="moat fade-up">
+        <h4>The distribution is proven.</h4>
+        <p>Universities are overwhelmed and looking for career-tech partners. A launch at the University of Tampa, expansion across the SEC, and the first 25 school partnerships represent ~750,000 addressable students by month eighteen — a realistic, nameable path, not a TAM deck.</p>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<!-- CLOSING -->
-<div class="closing">
-  <h2>The future of education and hiring<br>will be measured by readiness,<br>not just credentials. <span style="color:var(--blue);display:inline-flex;align-items:center;gap:6px;vertical-align:middle"><img src="dilly_logo-removebg-preview (1).png" alt="dilly" style="height:42px;vertical-align:middle;filter:hue-rotate(0deg)">  <span style="color:var(--blue)">is that future.</span></span></h2>
-  <p>11 products. Built and running. Raising $1.2M to scale nationally and globally.</p>
-  <p style="font-size:14px;color:var(--g600);margin-top:4px">Recruiters spend six seconds on a resume. Students have no way to know what that pattern looks like. Until now.</p>
-  <a href="mailto:kochhardilan05@gmail.com" class="btn btn-blue" style="margin-top:20px">kochhardilan05@gmail.com →</a>
-  <div class="contact">
-    <a href="https://hellodilly.com" target="_blank">hellodilly.com</a> · Tampa, Florida
+<!-- The Ask -->
+<section class="section" id="ask" style="padding: 7rem 1.75rem; background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(212, 169, 74, 0.1), transparent 60%), var(--ink-2);">
+  <div class="wrap" style="text-align: center;">
+    <div class="fade-up">
+      <div class="eyebrow" style="justify-content: center; display: inline-flex;">The Round</div>
+      <h2 class="h2">What we're raising and what it unlocks.</h2>
+      <p class="lead" style="margin: 0 auto 3.5rem;">Eighteen months of runway to turn a shipped product into a launched one — University of Tampa in April, the SEC pipeline after that, the first hundred schools within eighteen months, and Seeker and Holder expansion off the student base as users graduate into them.</p>
+    </div>
+
+    <div class="ask-box fade-up">
+      <div class="ask-num mono">$1.2M</div>
+      <div class="ask-kind">Pre-seed · SAFE</div>
+
+      <div class="ask-terms">
+        <div>
+          <div class="ask-term-label">Go-to-market</div>
+          <div class="ask-term-val">UT → SEC → 25 schools</div>
+        </div>
+        <div>
+          <div class="ask-term-label">18-month target</div>
+          <div class="ask-term-val">10K verified users</div>
+        </div>
+        <div>
+          <div class="ask-term-label">Next milestone</div>
+          <div class="ask-term-val">Seed at revenue</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier-foot fade-up" style="text-align: center; max-width: 640px; margin: 2.5rem auto 0;">
+      <strong>Use of funds:</strong> GTM at university partners · first two hires (iOS, GTM) · infrastructure scale to 10K active profiles · legal + compliance for family/gift plans.
+    </div>
   </div>
-</div>
+</section>
+
+<!-- Contact -->
+<section class="section-tight">
+  <div class="wrap">
+    <div class="fade-up" style="text-align: center; max-width: 42rem; margin: 0 auto 2rem;">
+      <div class="eyebrow" style="justify-content: center; display: inline-flex;">Contact</div>
+      <h2 class="h2">Let's talk.</h2>
+      <p class="lead" style="margin: 0 auto;">If this is a round you want to be in, reach out directly. All deck requests come back same-day.</p>
+    </div>
+
+    <div class="contact-grid fade-up">
+      <div class="contact-item" style="text-align: right;">
+        <h4>Founder</h4>
+        <a href="mailto:dilan@hellodilly.com">dilan@hellodilly.com →</a>
+      </div>
+      <div class="contact-item">
+        <h4>Product</h4>
+        <a href="https://hellodilly.com" target="_blank" rel="noopener">hellodilly.com →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <a href="index.html">Overview</a><a href="product.html">Product</a><a href="market.html">Market</a><a href="team.html">Team</a>
-  <p style="margin-top:10px">© 2026 Dilly · hellodilly.com</p>
+  <div class="foot">
+    <div>© 2026 Dilly · Confidential · Not for distribution</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="market.html">Market</a>
+      <a href="team.html">Team</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-const ob=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1});
-document.querySelectorAll('.fu').forEach(el=>ob.observe(el));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
+
 </body>
 </html>
