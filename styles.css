@@ -944,9 +944,9 @@ footer {
   cursor: zoom-in;
   height: 620px;
   background: #080c1a;
-  display: flex; align-items: flex-start;
+  display: flex; flex-direction: column;
 }
-.gallery-grid .shot img { width: 100%; height: 100%; object-fit: contain; object-position: top; display: block; }
+.gallery-grid .shot img { width: 100%; flex: 1; min-height: 0; object-fit: contain; object-position: top; display: block; }
 @media (max-width: 900px) { .gallery-grid .shot { height: 480px; } }
 @media (max-width: 480px) { .gallery-grid .shot { height: 70vw; } }
 .gallery-placeholder {
