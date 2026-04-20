@@ -788,7 +788,7 @@ body::before {
   margin-bottom: 1.8rem;
   display: flex; gap: 1.5rem; flex-wrap: wrap;
 }
-.hero-home-kicker span::before { content: "—"; margin-right: 0.6rem; color: var(--text-dim); }
+.hero-home-kicker span::before { content: "·"; margin-right: 0.6rem; color: var(--text-dim); }
 .hero-home-kicker span:first-child::before { display: none; }
 .hero-home-title {
   font-family: "Cinzel", serif; font-weight: 600;
@@ -885,6 +885,262 @@ footer {
 }
 .foot-links { display: flex; gap: 2rem; }
 .foot a:hover { color: var(--gold); }
+
+/* ─── Screenshot frames ─── */
+.shot {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.25s ease;
+}
+.shot:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot-caption {
+  padding: 0.9rem 1.1rem;
+  border-top: 1px solid var(--rule);
+  font-family: "Geist Mono", monospace;
+  font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.shot-caption .shot-n { color: var(--text-dim); }
+
+/* Surface + inline screenshot combo */
+.surface-with-shot {
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 2.2rem 2rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.surface-with-shot:hover { background: var(--surface-2); }
+.surface-with-shot .shot {
+  max-width: 320px; margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .surface-with-shot { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* Screenshot gallery grid */
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem;
+  margin-top: 3.5rem;
+}
+.gallery-grid .shot img { aspect-ratio: 9 / 16; object-fit: cover; }
+.gallery-placeholder {
+  border: 1.5px dashed var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  font-family: "Geist Mono", monospace;
+  font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--text-dim);
+  aspect-ratio: 9 / 16;
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1.8;
+  transition: border-color 0.25s, color 0.25s;
+}
+.gallery-placeholder:hover { border-color: var(--gold); color: var(--gold); }
+@media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+/* ─── Founder (headshot + bio) ─── */
+.founder-grid {
+  display: grid; grid-template-columns: 240px 1fr; gap: 3rem;
+  align-items: start;
+  margin-top: 3.5rem;
+  max-width: 880px; margin-left: auto; margin-right: auto;
+  border: 1px solid var(--rule);
+  background: linear-gradient(155deg, rgba(212, 169, 74, 0.04), rgba(0, 40, 104, 0.06));
+  border-radius: var(--radius);
+  padding: 2.8rem 2.5rem;
+}
+.headshot-frame {
+  position: relative;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+  box-shadow: 0 20px 50px rgba(212, 169, 74, 0.18);
+  margin: 0 auto;
+}
+.headshot-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.headshot-frame::after {
+  content: "";
+  position: absolute; inset: -8px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.founder-name {
+  font-family: "Cinzel", serif; font-weight: 600;
+  font-size: 1.8rem; letter-spacing: 0.04em;
+  color: var(--cream); margin-bottom: 0.4rem;
+}
+.founder-role {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold);
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.5rem;
+}
+.founder-bio {
+  font-size: 0.98rem; color: var(--text-muted); line-height: 1.8;
+  margin-bottom: 1.3rem;
+}
+.founder-bio strong { color: var(--cream); font-weight: 600; }
+@media (max-width: 720px) {
+  .founder-grid { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; text-align: center; }
+  .founder-role { text-align: center; }
+  .founder-bio { text-align: left; }
+}
+
+/* ─── Vision (growth ideas) ─── */
+.vision-cat {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.66rem; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold);
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin: 4rem 0 2.5rem;
+  text-align: center;
+}
+
+.vision-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.vision-grid.two-up { grid-template-columns: repeat(2, 1fr); }
+
+.vision-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.2rem 1.9rem;
+  display: flex; flex-direction: column; gap: 0.9rem;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.vision-card::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.vision-card:hover { background: var(--surface-2); border-color: var(--rule); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.vision-card:hover::before { opacity: 1; }
+.vision-card.shipping { border: 1px solid var(--gold); background: linear-gradient(180deg, rgba(212, 169, 74, 0.06) 0%, var(--surface) 60%); }
+
+.vision-card-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+.vision-tag {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold);
+}
+.vision-status {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+.vision-status.live {
+  color: var(--ink);
+  background: var(--gold);
+  border-color: var(--gold);
+  font-weight: 600;
+}
+.vision-status.next { color: var(--gold); border-color: var(--rule); }
+.vision-status.later { color: var(--text-dim); border-color: var(--border); }
+.vision-status.b2b { color: var(--cream); border-color: var(--rule); background: rgba(212, 169, 74, 0.1); }
+
+.vision-title {
+  font-family: "Cinzel", serif; font-weight: 600;
+  font-size: 1.3rem; letter-spacing: 0.04em;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.vision-title em { color: var(--gold); font-style: italic; font-family: "Playfair Display", "Cinzel", serif; }
+.vision-desc { font-size: 0.93rem; color: var(--text-muted); line-height: 1.7; }
+.vision-why {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem; letter-spacing: 0.04em;
+  color: var(--gold);
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+  margin-top: auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .vision-grid, .vision-grid.two-up { grid-template-columns: 1fr; }
+}
+
+/* Expansion diagram (the "one profile, many products" visual) */
+.expansion-map {
+  margin: 4rem 0;
+  padding: 3rem 2rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212, 169, 74, 0.06), transparent 70%);
+  text-align: center;
+}
+.expansion-core {
+  display: inline-flex; flex-direction: column; align-items: center;
+  padding: 1.5rem 2.5rem;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--ink);
+  box-shadow: 0 0 40px rgba(212, 169, 74, 0.2);
+  margin-bottom: 2rem;
+}
+.expansion-core-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.expansion-core-val {
+  font-family: "Cinzel", serif; font-weight: 600;
+  font-size: 1.5rem; letter-spacing: 0.06em;
+  color: var(--cream);
+}
+.expansion-arrows {
+  font-family: "Cinzel", serif;
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 0.5em;
+  margin: 1rem 0;
+  opacity: 0.7;
+}
+.expansion-branches {
+  display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+.expansion-branches span { padding: 0.5rem 0.9rem; border: 1px solid var(--rule); border-radius: 4px; }
 
 /* ─── Fade-in ─── */
 .fade-up { opacity: 0; transform: translateY(18px); transition: opacity 0.8s ease, transform 0.8s ease; }

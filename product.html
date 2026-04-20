@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Product · Dilly Investor Overview</title>
-<meta name="description" content="The four surfaces, the three modes, the stack. How Dilly works end-to-end.">
+<meta name="description" content="The four surfaces, the three modes, the stack. How Dilly works end to end.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="styles.css">
@@ -21,66 +21,92 @@
       <a href="index.html">Home</a>
       <a href="product.html" class="active">Product</a>
       <a href="market.html">Market</a>
+      <a href="vision.html">Vision</a>
       <a href="team.html">Team</a>
     </div>
     <a href="mailto:dilan@hellodilly.com" class="nav-cta">Request Deck</a>
   </div>
 </nav>
 
-<!-- Page hero -->
 <header class="page-hero">
   <div class="wrap fade-up">
     <div class="eyebrow">The Product</div>
     <h1>Four surfaces. One profile. <em>Zero scores.</em></h1>
-    <p class="lead">Everything Dilly does is grounded in a living profile the user builds through conversation. No Smart/Grit/Build. No ranking. No leaderboards. Fit narratives, letters, disruption intelligence — reads on the profile, not reductions of it.</p>
+    <p class="lead">Everything Dilly does is grounded in a living profile the user builds through conversation. No Smart/Grit/Build. No ranking. No leaderboards. Fit narratives, letters, disruption intelligence. Reads on the profile, not reductions of it.</p>
   </div>
 </header>
 
-<!-- Four surfaces -->
+<!-- Four surfaces with inline screenshots -->
 <section class="section">
   <div class="wrap">
-    <div class="surfaces">
-      <article class="surface fade-up">
-        <div class="surface-num">01 — Foundation</div>
-        <h3 class="surface-title">The Dilly Profile</h3>
-        <p class="surface-desc">
-          A structured, growing record of who the user is: experiences, goals, fears, beyond-resume facts, target companies, deadlines. Built from conversation, seeded from a resume, edited directly. 16+ fact categories stored as structured JSON with dual-write to Postgres. The profile is the product — everything else is a read on it.
-        </p>
-        <span class="surface-tag">profile.json · students table · 2,212 LOC</span>
+    <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+
+      <article class="surface-with-shot fade-up">
+        <div>
+          <div class="surface-num">01 · Foundation</div>
+          <h3 class="surface-title">The Dilly Profile</h3>
+          <p class="surface-desc">
+            A structured, growing record of who the user is: experiences, goals, fears, beyond-resume facts, target companies, deadlines. Built from conversation, seeded from a resume, edited directly. 16+ fact categories stored as structured JSON with dual-write to Postgres. The profile is the product. Everything else is a read on it.
+          </p>
+          <span class="surface-tag">profile.json · students table · 2,212 LOC</span>
+        </div>
+        <div class="shot">
+          <img src="dillyhome.png" alt="Dilly home screen showing the profile">
+          <div class="shot-caption"><span>Home</span><span class="shot-n">01</span></div>
+        </div>
       </article>
 
-      <article class="surface fade-up">
-        <div class="surface-num">02 — Signal</div>
-        <h3 class="surface-title">Fit Narratives</h3>
-        <p class="surface-desc">
-          For every job, Dilly writes a personal read: what the user has that matches, what's missing, what to do. One powerful sentence that never truncates across devices. Haiku 4.5. ~$0.0002 per narrative. Cached per user-job pair. Pre-generated for the entire feed via batch runs, not on-demand.
-        </p>
-        <span class="surface-tag">Haiku 4.5 · $0.0002/pair · batch-generated</span>
+      <article class="surface-with-shot fade-up">
+        <div>
+          <div class="surface-num">02 · Signal</div>
+          <h3 class="surface-title">Fit Narratives</h3>
+          <p class="surface-desc">
+            For every job, Dilly writes a personal read: what the user has that matches, what's missing, what to do. One powerful sentence that never truncates across devices. Haiku 4.5. ~$0.0002 per narrative. Cached per user-job pair. Pre-generated for the entire feed via batch runs, not on-demand.
+          </p>
+          <span class="surface-tag">Haiku 4.5 · $0.0002/pair · batch-generated</span>
+        </div>
+        <div class="shot">
+          <img src="dillyinternships.png" alt="Dilly internship feed with fit narratives">
+          <div class="shot-caption"><span>Jobs · Fit</span><span class="shot-n">02</span></div>
+        </div>
       </article>
 
-      <article class="surface fade-up">
-        <div class="surface-num">03 — Command</div>
-        <h3 class="surface-title">What We Think</h3>
-        <p class="surface-desc">
-          A personal letter from Dilly that reads the full profile, connects dots across experiences, identifies patterns, names the next moves. What a great career advisor would write if they had read everything you wrote. Refreshes as the profile grows. Weekly brief variant sends the same treatment to email.
-        </p>
-        <span class="surface-tag">insights.py · weekly_brief.py</span>
+      <article class="surface-with-shot fade-up">
+        <div>
+          <div class="surface-num">03 · Command</div>
+          <h3 class="surface-title">What We Think</h3>
+          <p class="surface-desc">
+            A personal letter from Dilly that reads the full profile, connects dots across experiences, identifies patterns, names the next moves. What a great career advisor would write if they had read everything you wrote. Refreshes as the profile grows. A weekly brief variant sends the same treatment to email.
+          </p>
+          <span class="surface-tag">insights.py · weekly_brief.py</span>
+        </div>
+        <div class="shot">
+          <img src="dillynewaudit.png" alt="Dilly audit and insights view">
+          <div class="shot-caption"><span>Audit · Insights</span><span class="shot-n">03</span></div>
+        </div>
       </article>
 
-      <article class="surface fade-up">
-        <div class="surface-num">04 — Defense</div>
-        <h3 class="surface-title">AI Arena</h3>
-        <p class="surface-desc">
-          AI disruption intelligence nobody else is shipping. Cohort-specific threat reports ("73% of accountants at risk in five years"), weekly signals, bullet-by-bullet vulnerability scans on the user's resume, replace-tests where AI attempts their role, and career-path simulation with AI factored in. A reason to open the app every week even when you aren't job-hunting.
-        </p>
-        <span class="surface-tag">ai_arena.py · 736 LOC · 18 path-lenses</span>
+      <article class="surface-with-shot fade-up">
+        <div>
+          <div class="surface-num">04 · Defense</div>
+          <h3 class="surface-title">AI Arena</h3>
+          <p class="surface-desc">
+            AI disruption intelligence nobody else is shipping. Cohort-specific threat reports ("73% of accountants at risk in five years"), weekly signals, bullet-by-bullet vulnerability scans on the user's resume, replace-tests where AI attempts their role, and career-path simulation with AI factored in. A reason to open the app every week even when you aren't job-hunting.
+          </p>
+          <span class="surface-tag">ai_arena.py · 736 LOC · 18 path-lenses</span>
+        </div>
+        <div class="shot">
+          <img src="dillyai.png" alt="Dilly AI Arena threat scanner">
+          <div class="shot-caption"><span>AI Arena</span><span class="shot-n">04</span></div>
+        </div>
       </article>
+
     </div>
 
     <div class="cost-card fade-up">
       <div class="cost-num mono">$1.50</div>
       <div class="cost-body">
-        <h3>LLM cost per user per month — and that's the whole moat.</h3>
+        <h3>LLM cost per user per month. That's the whole moat.</h3>
         <p>
           Anthropic Claude Haiku 4.5 exclusively. Prompt caching eliminates 90% of repeat reads. Batch narrative generation. Static lookup tables for disruption data (one-time $5 generation cost, then free forever). Feature-level gating by plan. This is how an $85 ARPU product runs at <strong>85%+ gross margin</strong> while paying for the best career AI available.
         </p>
@@ -89,8 +115,58 @@
   </div>
 </section>
 
-<!-- Three modes (detailed) -->
-<section class="section" id="modes" style="background: linear-gradient(180deg, rgba(0, 19, 54, 0.45) 0%, transparent 100%); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+<!-- Gallery: see the whole app -->
+<section class="section stack" id="gallery">
+  <div class="wrap">
+    <div class="fade-up" style="max-width: 50rem;">
+      <div class="eyebrow">The Gallery</div>
+      <h2 class="h2">See the whole app.</h2>
+      <p class="lead">Every screen below is running in the TestFlight build today. Tap any image on mobile to expand. Placeholder tiles will fill in as new surfaces ship.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="shot fade-up">
+        <img src="dillyhome.png" alt="Home">
+        <div class="shot-caption"><span>Home</span><span class="shot-n">iOS</span></div>
+      </div>
+      <div class="shot fade-up">
+        <img src="dillyai.png" alt="AI Arena">
+        <div class="shot-caption"><span>AI Arena</span><span class="shot-n">iOS</span></div>
+      </div>
+      <div class="shot fade-up">
+        <img src="dillyinternships.png" alt="Internships">
+        <div class="shot-caption"><span>Jobs</span><span class="shot-n">iOS</span></div>
+      </div>
+      <div class="shot fade-up">
+        <img src="dillyinternshiptracker.png" alt="Application tracker">
+        <div class="shot-caption"><span>Tracker</span><span class="shot-n">iOS</span></div>
+      </div>
+      <div class="shot fade-up">
+        <img src="dillyrank.png" alt="Rank">
+        <div class="shot-caption"><span>Rank</span><span class="shot-n">iOS</span></div>
+      </div>
+      <div class="shot fade-up">
+        <img src="dillycalendar.png" alt="Calendar">
+        <div class="shot-caption"><span>Calendar</span><span class="shot-n">iOS</span></div>
+      </div>
+      <div class="shot fade-up">
+        <img src="dillynewaudit.png" alt="Audit">
+        <div class="shot-caption"><span>Audit</span><span class="shot-n">iOS</span></div>
+      </div>
+      <div class="shot fade-up">
+        <img src="dillyresumeeditor.png" alt="Resume editor">
+        <div class="shot-caption"><span>Resume Editor</span><span class="shot-n">iOS</span></div>
+      </div>
+      <div class="gallery-placeholder fade-up">Holder<br>Dashboard<br><br>coming next</div>
+      <div class="gallery-placeholder fade-up">Second<br>Brain<br><br>coming next</div>
+      <div class="gallery-placeholder fade-up">Interview<br>Practice<br><br>coming next</div>
+      <div class="gallery-placeholder fade-up">Add<br>Yours<br><br>+</div>
+    </div>
+  </div>
+</section>
+
+<!-- Three modes detailed -->
+<section class="section" id="modes">
   <div class="wrap">
     <div class="fade-up" style="max-width: 50rem;">
       <div class="eyebrow">Three Modes, One Codebase</div>
@@ -103,7 +179,7 @@
         <div class="mode-tag">Mode 01</div>
         <h3 class="mode-title">Student</h3>
         <div class="mode-sub">Pre-first-job</div>
-        <p class="mode-desc">Before the first full-time role. Internship hunt, ATS-tailored resumes, tutorials, audits. Built for .edu — the profile grows through onboarding, voice chats, and resume upload.</p>
+        <p class="mode-desc">Before the first full-time role. Internship hunt, ATS-tailored resumes, tutorials, audits. Built for .edu. The profile grows through onboarding, voice chats, and resume upload.</p>
         <ul class="mode-list">
           <li>Internship feed, cohort-matched</li>
           <li>ATS resume builder</li>
@@ -140,19 +216,19 @@
     </div>
 
     <div class="mode-switch-note fade-up">
-      Users flip between modes via a life-event switch in Settings —
-      <strong>"I got a job"</strong> / <strong>"I lost my job"</strong> — and each flip triggers a mode-specific transition tutorial. The profile and history carry over; the product changes.
+      Users flip between modes via a life-event switch in Settings.
+      <strong>"I got a job"</strong> / <strong>"I lost my job."</strong> Each flip triggers a mode-specific transition tutorial. The profile and history carry over; the product changes.
     </div>
   </div>
 </section>
 
-<!-- Retention primitives -->
+<!-- Retention -->
 <section class="section">
   <div class="wrap">
     <div class="fade-up" style="max-width: 50rem;">
       <div class="eyebrow">Retention Architecture</div>
       <h2 class="h2">The moat isn't the features. It's the return.</h2>
-      <p class="lead">Career tools are graveyards — users sign up once and forget. Dilly ships retention primitives as first-class product, engineered for daily and weekly return on a surface that otherwise sees a user twice a year.</p>
+      <p class="lead">Career tools are graveyards. Users sign up once and forget. Dilly ships retention primitives as first-class product, engineered for daily and weekly return on a surface that otherwise sees a user twice a year.</p>
     </div>
 
     <div class="loops-grid">
@@ -167,21 +243,21 @@
         <span class="loop-tag">Weekly</span>
         <div class="loop-body">
           <h4>Cohort Pulse</h4>
-          <p>Weekly precomputed card: metrics, trends, peer comparisons — scoped to the user's cohort. Batch-generated via Haiku at ~$0.0003 per pulse.</p>
+          <p>Weekly precomputed card: metrics, trends, peer comparisons, scoped to the user's cohort. Batch-generated via Haiku at ~$0.0003 per pulse.</p>
         </div>
       </div>
       <div class="loop fade-up">
         <span class="loop-tag">Memory</span>
         <div class="loop-body">
           <h4>Second Brain</h4>
-          <p>Chronological career timeline — events, decisions, achievements, connections. A log of what you did, not what you failed at. Worth opening the app just to add to.</p>
+          <p>Chronological career timeline: events, decisions, achievements, connections. A log of what you did, not what you failed at. Worth opening the app just to add to.</p>
         </div>
       </div>
       <div class="loop fade-up">
         <span class="loop-tag">Intelligence</span>
         <div class="loop-body">
-          <h4>AI Arena — Weekly Signal</h4>
-          <p>A weekly curated signal about the user's field, framed through 18 path-aware advisor lenses. Same data, 18 different readings — a structural reason to return when no one else in the category offers one.</p>
+          <h4>AI Arena · Weekly Signal</h4>
+          <p>A weekly curated signal about the user's field, framed through 18 path-aware advisor lenses. Same data, 18 different readings. A structural reason to return when no one else in the category offers one.</p>
         </div>
       </div>
     </div>
@@ -245,6 +321,7 @@
       <a href="index.html">Home</a>
       <a href="product.html">Product</a>
       <a href="market.html">Market</a>
+      <a href="vision.html">Vision</a>
       <a href="team.html">Team</a>
     </div>
   </div>
