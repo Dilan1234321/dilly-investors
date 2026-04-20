@@ -48,7 +48,6 @@
           <p class="surface-desc">
             A structured, growing record of who the user is: experiences, goals, fears, beyond-resume facts, target companies, deadlines. Built from conversation, seeded from a resume, edited directly. 16+ fact categories stored as structured JSON with dual-write to Postgres. The profile is the product. Everything else is a read on it.
           </p>
-          <span class="surface-tag">profile.json · students table · 2,212 LOC</span>
         </div>
         <div class="shot">
           <img src="app-home.png" alt="Dilly home screen">
@@ -63,7 +62,6 @@
           <p class="surface-desc">
             For every job, Dilly writes a personal read: what the user has that matches, what's missing, what to do. One powerful sentence that never truncates across devices. Haiku 4.5. ~$0.0002 per narrative. Cached per user-job pair. Pre-generated for the entire feed via batch runs, not on-demand.
           </p>
-          <span class="surface-tag">Haiku 4.5 · $0.0002/pair · batch-generated</span>
         </div>
         <div class="shot">
           <img src="app-jobs.png" alt="Dilly Jobs - fit-ranked internship matching">
@@ -78,7 +76,6 @@
           <p class="surface-desc">
             A weekly coaching brief written by Dilly that reads the full profile, connects dots across experiences, and delivers one concrete move. Not generic advice. A specific, actionable call-to-action grounded in what Dilly knows about this user, their goals, and where they're stuck. A structural reason to open the app every week.
           </p>
-          <span class="surface-tag">chapter.py · weekly_brief.py</span>
         </div>
         <div class="shot">
           <img src="app-chapter.png" alt="Chapter - weekly coaching brief">
@@ -93,7 +90,6 @@
           <p class="surface-desc">
             AI disruption intelligence nobody else is shipping. Cohort-specific threat reports ("73% of accountants at risk in five years"), weekly signals, bullet-by-bullet vulnerability scans on the user's resume, replace-tests where AI attempts their role, and career-path simulation with AI factored in. A reason to open the app every week even when you aren't job-hunting.
           </p>
-          <span class="surface-tag">ai_arena.py · 736 LOC · 18 path-lenses</span>
         </div>
         <div class="shot">
           <img src="app-intelligence.png" alt="Career Intelligence - AI threat report">
@@ -103,15 +99,6 @@
 
     </div>
 
-    <div class="cost-card fade-up">
-      <div class="cost-num mono">$1.50</div>
-      <div class="cost-body">
-        <h3>LLM cost per user per month. That's the whole moat.</h3>
-        <p>
-          Anthropic Claude Haiku 4.5 exclusively. Prompt caching eliminates 90% of repeat reads. Batch narrative generation. Static lookup tables for disruption data (one-time $5 generation cost, then free forever). Feature-level gating by plan. This is how an $85 ARPU product runs at <strong>85%+ gross margin</strong> while paying for the best career AI available.
-        </p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -265,34 +252,34 @@
     <div class="fade-up" style="max-width: 50rem;">
       <div class="eyebrow">The Stack</div>
       <h2 class="h2">Shipped, not speculative.</h2>
-      <p class="lead">50+ backend routers, 14,000+ lines of profile / audit / resume / AI code, a 2,075-line recruiter surface built and ready, and an iOS app on build 301+ distributed via TestFlight.</p>
+      <p class="lead">A full-stack career platform shipped and in users' hands. iOS on TestFlight, FastAPI backend, Postgres, Stripe, and six ATS vendor integrations running in production.</p>
     </div>
 
     <div class="stack-grid">
       <div class="stack-item fade-up">
         <div class="stack-label">Mobile</div>
         <div class="stack-val">Expo · React Native</div>
-        <div class="stack-desc">iOS build 301+ on TestFlight · SDK 55 · file-based routing · secure keychain auth · 3-phase boot machine</div>
+        <div class="stack-desc">iOS build 301+ on TestFlight · Expo SDK 55 · file-based routing · secure keychain auth</div>
       </div>
       <div class="stack-item fade-up">
         <div class="stack-label">Backend</div>
         <div class="stack-val">FastAPI on Railway</div>
-        <div class="stack-desc">Python · 50+ routers · APScheduler cron · request-ID logging · global exception envelope</div>
+        <div class="stack-desc">Python · FastAPI · APScheduler cron · request-ID logging</div>
       </div>
       <div class="stack-item fade-up">
         <div class="stack-label">Data</div>
         <div class="stack-val">Postgres · AWS RDS</div>
-        <div class="stack-desc">psycopg2 · file-based profile snapshots · 20-audit rolling buffer · pgvector planned for embeddings</div>
+        <div class="stack-desc">Postgres · psycopg2 · rolling audit buffer · pgvector planned for embeddings</div>
       </div>
       <div class="stack-item fade-up">
         <div class="stack-label">AI</div>
         <div class="stack-val">Anthropic Haiku 4.5</div>
-        <div class="stack-desc">claude-haiku-4-5-20251001 · exclusive across all tiers · prompt caching · per-feature token ledger</div>
+        <div class="stack-desc">Claude Haiku 4.5 · exclusive across all tiers · prompt caching</div>
       </div>
       <div class="stack-item fade-up">
         <div class="stack-label">Payments</div>
         <div class="stack-val">Stripe</div>
-        <div class="stack-desc">Subscription + 6m/12m gift + family plan · idempotent webhooks · promo codes · cancellation flow</div>
+        <div class="stack-desc">Subscription + gift plans + family plan · idempotent webhooks · promo codes</div>
       </div>
       <div class="stack-item fade-up">
         <div class="stack-label">Jobs</div>
