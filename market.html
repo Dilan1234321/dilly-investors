@@ -24,9 +24,19 @@
       <a href="vision.html">Vision</a>
       <a href="team.html">Team</a>
     </div>
-    <a href="mailto:ceo@hellodilly.com" class="nav-cta">Request Deck</a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a href="mailto:ceo@hellodilly.com" class="nav-cta nav-cta-desktop">Request Deck</a>
   </div>
 </nav>
+
+<div class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
+  <a href="index.html">Home</a>
+  <a href="product.html">Product</a>
+  <a href="market.html" class="active">Market</a>
+  <a href="vision.html">Vision</a>
+  <a href="team.html">Team</a>
+  <a href="mailto:ceo@hellodilly.com" class="drawer-cta">Request Deck</a>
+</div>
 
 <header class="page-hero">
   <div class="wrap fade-up">
@@ -540,6 +550,31 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  // Mobile nav
+  var burger = document.getElementById("navBurger");
+  var drawer = document.getElementById("navDrawer");
+  burger.addEventListener("click", function() {
+    var open = drawer.classList.toggle("open");
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open);
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+  drawer.querySelectorAll("a").forEach(function(a) {
+    a.addEventListener("click", function() {
+      drawer.classList.remove("open");
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    });
+  });
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && drawer.classList.contains("open")) {
+      drawer.classList.remove("open");
+      burger.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+  });
+
 </script>
 
 </body>

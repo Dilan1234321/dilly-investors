@@ -127,9 +127,70 @@ body::before {
   border: 1px solid var(--gold);
 }
 .nav-cta:hover { background: var(--gold-hi); border-color: var(--gold-hi); transform: translateY(-1px); }
+
+/* ─── Hamburger button ─── */
+.nav-burger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px;
+  width: 40px; height: 40px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.nav-burger:hover { background: rgba(255,255,255,0.06); }
+.nav-burger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.28s ease, opacity 0.2s ease, width 0.2s ease;
+  transform-origin: center;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Mobile drawer ─── */
+.nav-drawer {
+  position: fixed; inset: 0; top: 0; z-index: 90;
+  background: rgba(8, 12, 28, 0.97);
+  backdrop-filter: blur(16px);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  gap: 0;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 6rem 2rem 3rem;
+}
+.nav-drawer.open { opacity: 1; pointer-events: all; }
+.nav-drawer a {
+  font-family: "Cinzel", serif; font-weight: 600;
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0.85rem 1rem;
+  width: 100%; text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: color 0.2s;
+}
+.nav-drawer a:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+.nav-drawer a:hover, .nav-drawer a.active { color: var(--gold); }
+.nav-drawer .drawer-cta {
+  margin-top: 2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  border: none;
+}
+.nav-drawer .drawer-cta:hover { background: var(--gold-hi); }
+
 @media (max-width: 820px) {
   .nav-links { display: none; }
   .nav-brand .brand-tag { display: none; }
+  .nav-cta-desktop { display: none; }
+  .nav-burger { display: flex; }
 }
 
 /* ─── Sections ─── */
