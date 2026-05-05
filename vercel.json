@@ -1,4 +1,40 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "capital.hellodilly.com"
+        }
+      ],
+      "destination": "https://investors.hellodilly.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "venture.hellodilly.com"
+        }
+      ],
+      "destination": "https://investors.hellodilly.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "invest.hellodilly.com"
+        }
+      ],
+      "destination": "https://investors.hellodilly.com/:path*",
+      "permanent": true
+    }
+  ]
 }
