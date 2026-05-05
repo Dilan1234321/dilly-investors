@@ -246,10 +246,10 @@ body::before {
   margin-bottom: 1.4rem;
 }
 .page-hero h1 em {
-  font-style: italic;
-  font-family: "Playfair Display", "Cinzel", serif;
+  font-style: normal;
+  font-family: inherit;
   color: var(--gold);
-  font-weight: 500;
+  font-weight: inherit;
 }
 .page-hero .lead { font-size: clamp(1.05rem, 1.4vw, 1.22rem); }
 
@@ -317,14 +317,14 @@ body::before {
 }
 .pos-quote {
   font-family: "Cinzel", serif; font-weight: 500;
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   line-height: 1.35;
   max-width: 24ch;
   margin: 0 auto 2rem;
   color: var(--cream);
 }
-.pos-quote em { color: var(--gold); font-style: italic; }
+.pos-quote em { color: var(--gold); font-style: normal; font-weight: inherit; }
 .pos-attr {
   
   font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase;
@@ -864,9 +864,9 @@ body::before {
   margin-bottom: 1.6rem;
 }
 .hero-home-title em {
-  font-style: italic;
-  font-family: "Playfair Display", "Cinzel", serif;
-  color: var(--gold); font-weight: 500;
+  font-style: normal;
+  font-family: inherit;
+  color: var(--gold); font-weight: inherit;
 }
 .hero-home-lead {
   font-size: clamp(1.05rem, 1.35vw, 1.18rem);
@@ -1186,7 +1186,8 @@ footer {
   margin-bottom: 0.5rem;
   line-height: 1.2;
 }
-.vision-title em { color: var(--gold); font-style: italic; font-family: "Playfair Display", "Cinzel", serif; }
+.vision-title em { color: var(--gold); font-style: normal; font-family: inherit; font-weight: inherit; }
+.h2 em { color: var(--gold); font-style: normal; font-family: inherit; font-weight: inherit; }
 .vision-desc { font-size: 0.93rem; color: var(--text-muted); line-height: 1.7; }
 .vision-why {
   
@@ -1568,7 +1569,7 @@ footer {
   margin: 0.8rem 0 1.5rem;
   line-height: 1.25;
 }
-.horizon-panel h3 em { color: var(--gold); font-style: italic; font-family: "Playfair Display", "Cinzel", serif; }
+.horizon-panel h3 em { color: var(--gold); font-style: normal; font-family: inherit; font-weight: inherit; }
 .horizon-lines {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
   margin-top: 2.5rem; text-align: left;
